@@ -351,6 +351,8 @@ router.post('/api/login', (req, res) => {
                 last_login: new Date().getTime()
               });
               res.send('login success!');
+            } else {
+              res.sendStatus(401);
             }
           });
       } else {
@@ -380,6 +382,8 @@ router.post('/api/login', (req, res) => {
                 last_login: new Date().getTime()
               });
               res.send('login success!');
+            } else {
+              res.sendStatus(401);
             }
           })
       } else {
