@@ -176,7 +176,7 @@ Upload.prototype.doUpload = function () {
   var that = this;
   var formData = new FormData();
 
-  // add assoc key values, this will be posts values
+  $('button[type="submit"]').addClass('disabled');
 
   formData.append("file", this.file, this.getName());
   formData.append("upload_file", true);
@@ -200,11 +200,13 @@ Upload.prototype.doUpload = function () {
       $("#progress-wrp").addClass("hide");
       Materialize.toast("Image Upload Successful", 3000);
       if(data !== "Error uploading to cloudinary"){
-        $("#placeholdFeaturedImage").attr("src", data.secure_url);
-        window.currentFeaturedImage = data;
+        $("#placeholdFeaturedImage").attr("src", data.result.secure_url);
+        window.currentFeaturedImage = data.result;
       }
+      $('button[type="submit"]').removeClass('disabled');
     },
     error: function (error) {
+      $('button[type="submit"]').removeClass('disabled');
       // handle error
       console.log(error);
     },
@@ -268,18 +270,18 @@ function writeNewPost(){
 
   $.ajax({
     type: "POST",
-    url: "/api/create/post",
+    url: "/api/createPost",
     data: {
-      postTitle: postTitle,
-      postDesc: postDesc,
-      postCat: postCat,
-      fullPost: fullPost,
-      postImage: postImage,
+      title: postTitle,
+      description: postDesc,
+      category: postCat,
+      body: fullPost,
+      media: postImage,
       published: published
     },
     success: function(data) {
       $('#NewPostForm i.newPostSpinner').addClass("hide");
-      Materialize.toast(JSON.stringify(data), 3000, 'rounded');
+      Materialize.toast(data.message, 3000, 'rounded');
       console.log(data);
     },
     error: function(err) {
@@ -294,7 +296,7 @@ function writeNewPost(){
 
 function writeEditPost(){
   $('#NewPostForm i.newPostSpinner').removeClass("hide");
-  var postImage = window.currentFeaturedImage || $('#placeholdFeaturedImage').attr('src') || null;
+  var postImage = window.currentFeaturedImage || null;
   var postTitle  = $('#newPostTitle').val();
   var postDesc = $("#newPosDesc").val() || truncate(fullPost, 300);
   var postCat = $("#newPostCat").val() || null;
@@ -310,18 +312,18 @@ function writeEditPost(){
 
   $.ajax({
     type: "POST",
-    url: "/api/edit/post/" + toEditPostID,
+    url: "/api/editPost/" + toEditPostID,
     data: {
-      postTitle: postTitle,
-      postDesc: postDesc,
-      postCat: postCat,
-      fullPost: fullPost,
-      postImage: postImage,
+      title: postTitle,
+      description: postDesc,
+      category: postCat,
+      body: fullPost,
+      media: postImage,
       published: published
     },
     success: function(data) {
       $('#NewPostForm i.newPostSpinner').addClass("hide");
-      Materialize.toast(JSON.stringify(data), 3000, 'rounded');
+      Materialize.toast(JSON.stringify(data.message), 3000, 'rounded');
       console.log(data);
     },
     error: function(err) {
@@ -342,6 +344,7 @@ function writeSiteInfo(){
 
   var twUrl = $('#fbUrl').val();
   var fbUrl = $('#twUrl').val();
+  var igUrl = $('#igUrl').val();
 
   $.ajax({
     type: "POST",
@@ -350,7 +353,8 @@ function writeSiteInfo(){
       aboutColoured: aboutColoured,
       aboutAuthor: aboutAuthor,
       twUrl: twUrl,
-      fbUrl: fbUrl
+      fbUrl: fbUrl,
+      igUrl: igUrl
     },
     success: function(data){
       $('#updateInfoSpinner').addClass('hide');

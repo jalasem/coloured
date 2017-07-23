@@ -33,9 +33,13 @@
         </thead>
 
         <tbody>
-          {{#each posts}}
-          {{> single_post_cell}}
-          {{/each}}
+          {{#if empty}}
+            <p class="flow-text">No Post in draft</p>
+          {{else}}
+            {{#each posts}}
+              {{> single_post_cell}}
+            {{/each}}
+          {{/if}}
         </tbody>
       </table>
     </div>

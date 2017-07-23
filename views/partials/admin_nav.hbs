@@ -6,7 +6,7 @@
           <img style="max-width:6rem" src="/images/logo.png" alt="Coloured" class="img-responsive">
         </a>
         <ul id="nav-mobile" class="right">
-          <li><a href="#" class="dropdown-button waves-effect" data-activates='profileDrop' data-constrainWidth="false" data-belowOrigin="true">
+          <li><a href="/controls/profile" class="dropdown-button waves-effect" data-activates='profileDrop' data-constrainWidth="false" data-belowOrigin="true">
             <i class="icon ion-person left"></i>
             {{adminfname}}
             <span class="hide-on-small-only">{{adminlname}}</span>
@@ -51,7 +51,7 @@
               <a href="/controls/posts/published" class="{{#if thisPage.published}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-ios-book tooltipped" data-position="right" data-delay="50" data-tooltip="Published"> </i> <span class="canGo">Published ({{ nopp }}) </span></a>
             </li>
             <li><a href="/controls/posts/drafts" class="{{#if thisPage.draft}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-edit tooltipped" data-position="right" data-delay="50" data-tooltip="Drafts"> </i> <span class="canGo">Drafts ({{ noup }}) </span></a></li>
-            <li><a href="/controls/admin/posts/featured" class="{{#if thisPage.featured}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-pound tooltipped" data-position="right" data-delay="50" data-tooltip="Featured"> </i> <span class="canGo">Featured</span></a></li>
+            <li><a href="/controls/posts/featured" class="{{#if thisPage.featured}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-pound tooltipped" data-position="right" data-delay="50" data-tooltip="Featured"> </i> <span class="canGo">Featured</span></a></li>
             <li><a {{#if thisPage.categories}}class="active"{{/if}} href="/controls/categories" class="blue-grey-text text-darken-2"><i class="icon ion-ios-keypad tooltipped" data-position="right" data-delay="50" data-tooltip="Categories"> </i> <span class="canGo">Categories</span></a></li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 <tr {{#if published}}{{else}}class="draft"{{/if}} id="tr{{@key}}" {{#if featured}}class="featured"{{/if}}>
-  <td id="{{@key}}">
+  <td id="{{slug}}">
     <p class="postTitle_viewTable"><a href="/posts/{{title}}" target="_blank">{{title}}</a></p>
     <div class="hide">
       <div class="post-description-viewTable">{{description}}</div>
@@ -9,9 +9,9 @@
       <span class="image-address">{{media.url}}</span> {{/if}}
     </div>
     <p class="actionsOnPost_viewTable">
-      <a href="/controls/posts/edit/{{@key}}" class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</a>
+      <a href="/controls/posts/edit/{{slug}}" class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</a>
       <span class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">DELETE</span>
-      <a href="/posts/{{title}}" target="_blank" class="viewAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
+      <a href="/p{{url}}" target="_blank" class="viewAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
     </p>
   </td>
   <td>{{#if published}}Published{{else}}Draft{{/if}}</td>

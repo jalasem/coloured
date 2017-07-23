@@ -30,7 +30,7 @@
               <select id="newPostCat">
                 <option value="general" disabled selected>Select Category</option>
                 {{#each cats}}
-                <option value="{{@key}}">{{@key}}</option>
+                <option value="{{name}}">{{name}}</option>
                 {{/each}}
               </select>
               <label for="newPostCat">Please select <mark>{{thisPostData.category}}</mark> or change as you wish</label>
@@ -39,7 +39,7 @@
           <div class="row">
             <div class="input-field col s12">
               <textarea id="newPostFull" class="materialize-textarea">
-                {{{thisPostData.full_post}}}
+                {{{thisPostData.body}}}
               </textarea>
               <label for="newPostFull" style="margin-top: -0.5rem;font-size: 1.5rem;color: #455A64;">Full Post</label>
             </div>

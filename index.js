@@ -87,7 +87,6 @@ const GetFeaturedPosts = () => {
       }
     });
 };
-
 const GetCategories = cat => {
   return Category
     .find({})
@@ -96,7 +95,6 @@ const GetCategories = cat => {
       return cats;
     });
 };
-
 const GetPostsByCategory = cat => {
   return Post
     .find({category: cat})
@@ -121,7 +119,6 @@ const GetPublishedPostsByCategory = cat => {
       }
     });
 };
-
 const GetsinglePost = (year, month, slug) => {
   return Post.findOne({slug: slug}, (err, post) => {
     if (err)
@@ -129,7 +126,13 @@ const GetsinglePost = (year, month, slug) => {
     return post;
   });
 };
-
+const GetPostWithSlug = (slug) => {
+  return Post.findOne({slug: slug}, (err, post) => {
+    if(err)
+      return 0;
+    return post;
+  });
+}
 const GetNoOfPosts = () => {
   return Post.count({}, (err, count) => {
     if (err)
@@ -146,7 +149,6 @@ const GetNoOfPublishedPosts = () => {
     return count;
   });
 };
-
 const GetNoOfUnpublishedPosts = () => {
   return Post.count({published: false}, (err, count) => {
     if(err)
@@ -154,7 +156,6 @@ const GetNoOfUnpublishedPosts = () => {
     return count;
   });
 };
-
 const GetNoOfPostsInCategory = cat => {
   return Post.count({
     category: cat
@@ -174,7 +175,6 @@ const GetNoOfPublishedPostsInCategory = cat => {
     return count;
   });
 };
-
 const GetMetadata = () => {
   return Metadata
     .find()
@@ -242,7 +242,7 @@ router.get('/', (req, res) => {
     if(posts.length > 0)
       empty = false;
     res.render('index.hbs', {
-      posts,
+      posts: posts.reverse(),
       categories,
       metadata,
       thisPage: {
@@ -253,7 +253,6 @@ router.get('/', (req, res) => {
     });
   });
 });
-
 
 router.get('/category/:cat', (req, res) => {
   var cat = req.params.cat;
@@ -270,7 +269,8 @@ router.get('/category/:cat', (req, res) => {
     if(posts.length > 0)
       empty = false;
     res.render('index', {
-      posts, categories,
+      posts: posts.reverse(),
+      categories,
       thisPage: {
         title: cat.toUpperCase(),
         category_page: true
@@ -434,13 +434,12 @@ router.post('/api/upload/image', fileParser, (req, res) => {
 });
 
 router.post('/api/createPost', (req, res) => {
-  // title, author, description, body, category, created:{on, month, year},
-  // published
   let title = req.body.title,
-    author = req.session.user || 'robotester',
+    author = req.session.user.name || 'robotester',
     description = req.body.description,
     body = req.body.body,
     category = req.body.category;
+
   thisTime = new Date(),
   createdOn = thisTime.getTime();
   month = config.monthNames[thisTime.getMonth()],
@@ -472,6 +471,56 @@ router.post('/api/createPost', (req, res) => {
     });
 });
 
+router.post('/api/editPost/:slug', (req, res) => {
+  let slug = req.params.slug;
+    title = req.body.title,
+    author = req.session.user.name || 'robotester',
+    description = req.body.description,
+    body = req.body.body,
+    category = req.body.category;
+    thisTime = new Date(),
+    createdOn = thisTime.getTime();
+    month = config.monthNames[thisTime.getMonth()],
+    year = thisTime.getFullYear(),
+    published = req.body.published,
+    media = req.body.media
+
+  let postUpdate = {}
+  if(media != null){
+    postUpdate = {
+      author,
+      title,
+      description,
+      body,
+      category,
+      month,
+      media,
+      year,
+      published
+    }
+  } else {
+    postUpdate = {
+      author,
+      title,
+      description,
+      body,
+      category,
+      month,
+      year,
+      published
+    }
+  }
+
+
+  Post.findOneAndUpdate({slug: slug}, postUpdate, (err) => {
+    if(!err){
+      res.send({message: 'Post modified successfully', code: 'OK'});
+    } else {
+      res.send({message: 'error creating post', code: 'NOT_OK'});
+    }
+  })
+});
+
 router.post('/api/createCategory', (req, res) => {
   let name = req.body.name,
     thisTime = new Date(),
@@ -492,12 +541,31 @@ router.post('/api/createCategory', (req, res) => {
 });
 
 router.patch('/api/metadata', (req, res) => {
-  Metadata.findById("59746ce7443f862d984cbb56", (err, doc) => {
-    if (err)
-      res.send("error updating metadata");
-      // doc.name = 'jason born'; TODO: run update from this line doc.save(() => { });
+  let aboutColoured = req.body.aboutColoured;
+  let aboutAuthor = req.body.aboutAuthor;
+  let twUrl = req.body.twUrl;
+  let fbUrl = req.body.fbUrl;
+  let igUrl = req.body.igUrl;
+
+  let update = {
+    about: aboutColoured,
+    author: {
+      about: aboutAuthor
+    },
+    social: {
+      facebook: fbUrl,
+      twitter: twUrl,
+      instagram: igUrl
     }
-  );
+  }
+
+  Metadata.findByIdAndUpdate("59746ce7443f862d984cbb56", update, (err) => {
+    if(!err){
+      res.send({message: "Update successfull", code: 'OK'});
+    } else {
+      res.send({message: "Update error", code: 'OK'})
+    }
+  });
 });
 
 app.get('/controls/logout', logout);
@@ -612,10 +680,133 @@ router.get('/controls/posts/featured', (req, res) => {
     });
 });
 
+router.get('/controls/categories', (req, res) => {
+  Promise
+    .all([GetCategories(), GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts()])
+    .then((result) => {
+      let categories = result[0];
+      let adminName = req.session.user.name;
+      let adminfname = adminName.split(" ")[0];
+      let adminlname = adminName.split(" ")[1];
+
+      let nop = result[1];
+      let nopp = result[2];
+      let noup = result[3];
+
+      let empty = true;
+      if(categories.length > 0)
+        empty = false;
+      return res.render("admin_categories", {
+        adminfname, adminlname, categories,
+        // nop, nopp, noup,
+        thisPage: {
+          title: "Categories",
+          categories: true
+        }, empty, nop, nopp, noup
+      });
+    });
+});
+
+router.get('/controls/siteInfo', (req, res) => {
+  Promise
+    .all([GetMetadata(), GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts()])
+    .then((result) => {
+      let metadata = result[0][0];
+      let adminName = req.session.user.name;
+      let adminfname = adminName.split(" ")[0];
+      let adminlname = adminName.split(" ")[1];
+
+      let nop = result[1];
+      let nopp = result[2];
+      let noup = result[3];
+
+      console.log()
+
+      return res.render("site_info", {
+        adminfname, adminlname, metadata,
+        // nop, nopp, noup,
+        thisPage: {
+          title: "Categories",
+          categories: true
+        }, nop, nopp, noup
+      });
+    });
+});
 
 router.get('/controls/admin/createPost', (req, res) => {
+  Promise.all([GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts(), GetCategories()]).then(result => {
+    let nop = result[0];
+    let nopp = result[1];
+    let noup = result[2];
+    let cats = result[3]
 
+    let adminName = req.session.user.name;
+    let adminfname = adminName.split(" ")[0];
+    let adminlname = adminName.split(" ")[1];
+
+    res.render('admin_new_post.hbs', {
+      adminfname,
+      adminlname,
+      cats,
+      nop,
+      nopp,
+      noup
+    })
+  });
+});
+
+router.get('/controls/posts/edit/:slug', (req, res) => {
+  Promise.all([GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts(), GetCategories(), GetPostWithSlug(req.params.slug)]).then(result => {
+    let nop = result[0];
+    let nopp = result[1];
+    let noup = result[2];
+    let cats = result[3];
+    let thisPostData = result[4];
+
+    let adminName = req.session.user.name;
+    let adminfname = adminName.split(" ")[0];
+    let adminlname = adminName.split(" ")[1];
+
+    res.render('admin_edit_post.hbs', {
+      adminfname,
+      adminlname,
+      thisPostData,
+      cats,
+      nop,
+      nopp,
+      noup
+    })
+  })
+});
+
+router.get('/controls/admin/')
+
+router.get('/controls/profile', (req, res) => {
+  Promise.all([GetMetadata(), GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts()]).then(result => {
+    let metadata = result[0]
+    let nop = result[1];
+    let nopp = result[2];
+    let noup = result[3];
+
+    let adminName = req.session.user.name;
+    let adminfname = adminName.split(" ")[0];
+    let adminlname = adminName.split(" ")[1];
+
+    return res.render('profile', {
+      adminfname,
+      adminlname,
+      metadata,
+      nop,
+      nopp,
+      noup,
+      thisPage: {
+        title: `Profile - ${adminfname} ${adminlname}`,
+        Profile: true
+      }
+    })
+  })
 })
+
 
 app.use('/', router);
 
