@@ -5,7 +5,24 @@
 
 <body class="grey lighten-5">
 	<header>
-		{{> nav}} {{#if page.home}}{{> featured_posts}}{{/if}}
+		{{> nav}}
+		{{#if home}}
+		<div class="container">
+				<section class="featured-posts row no-margin-bottom">
+						<h1 class="section-heading">Featured Posts</h1>
+						{{#each featured}}
+						<div class="col s12 m6 l4">
+								<div class="card">
+										<div class="card-image">
+												<img src="{{media.secure_url}}" class="img-responsive">
+												<a href="/p{{url}}" class="card-title">{{title}}</a>
+										</div>
+								</div>
+						</div>
+						{{/each}}
+				</section>
+		</div>
+		{{/if}}
 	</header>
 	<main class="row">
 		<div class="col s12 m12 l9">

@@ -7,6 +7,7 @@ var postSchema = new Schema({
   description: String,
   author: String,
   body: String,
+  featured: {type: Boolean, default: false},
   createdOn: { type: Number, default: (new Date()).getTime() },
   updated_at: Schema.Types.Mixed,
   slug: {

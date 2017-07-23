@@ -1,70 +1,88 @@
 $(document)
   .ready(function () {
-    // $(".viewAction_viewTable")
-    //   .click(function (e) {
-    //     var clickedPostID = e.currentTarget.parentElement.parentElement.id;
+    $('.featureAction_viewTable').click(function (e) {
+      var sure = confirm("Sure to feature this Post?");
+      if (sure) {
+        var clickedPostID = e.currentTarget.parentElement.parentElement.id;
+        $.ajax({
+          type: 'POST',
+          url: '/api/featurePost',
+          data: {
+           slug: clickedPostID
+          },
+          success: function (data) {
+            Materialize.toast(JSON.stringify(data.message, undefined, 2), 3000, 'rounded');
+            if(data.code == "OK")
+              $('#tr' + clickedPostID).addClass('featured');
+          },
+          error: function (error) {
+            Materialize.toast(JSON.stringify(error, undefined, 2), 3000, 'rounded');
+          }
+        });
+      }
+    });
 
-    //     var postTitle = $("#" + clickedPostID + " p.postTitle_viewTable").text();
-    //     var postCat = $("#" + clickedPostID + " .post-category-viewTable").text() || "General";
-    //     var postDesc = $("#" + clickedPostID + " .post-description-viewTable").text();
-    //     var postfull = $("#" + clickedPostID + " .post-full-viewTable").html();
-    //     var postImageUrl = $("#" + clickedPostID + " .image-address").text();
-    //     var postCreationDate = $("#" + clickedPostID + " .creationTime").text();
-    //     var postCreationDate = $("td#" + clickedPostID + "+td+td.creationTime").text();
+    $(".deleteAction_viewTable").click(function (e) {
+      var sure = confirm("are you sure to delete this post?");
+      if (sure) {
+        var clickedPostID = e.currentTarget.parentElement.parentElement.id;
 
-    //     $("#postLabelOnViewPop").text(postCat);
-    //     $("#postImageOnViewPop").attr("src", postImageUrl);
-    //     $("#postCreationDateOnViewPop").text(postCreationDate);
-    //     $("#postTitleOnViewPop").text(postTitle);
-    //     $("#postfullOnViewPop").html(postfull);
-    //     // $("#view_postPos").text()
-    //     $("#view_postPop, #view_postPop .popup-overlay").removeClass("hide");
-    //   });
+        var postCat = $("#" + clickedPostID + " .post-category-viewTable").text() || "General";
 
-    // $(".editAction_viewTable").click(function (e) {
-    //   var clickedPostID = e.currentTarget.parentElement.parentElement.id;
+        $.ajax({
+          type: 'DELETE',
+          dataType: 'text',
+          url: '/api/deletePost',
+          data: {
+            postID: clickedPostID,
+            postCat: postCat
+          },
+          success: function () {
+            $("#tr" + clickedPostID).remove();
+            Materialize.toast("Post successfully deleted", 4000, "rounded");
+          },
+          error: function (err) {
+            Materialize.toast("there was an error deleteing this post!", 4000, 'rounded');
+            console.log(err);
+          }
+        });
+      }
+    });
 
-    //   var postTitle = $("#" + clickedPostID + " p.postTitle_viewTable").text();
-    //   var postCat = $("#" + clickedPostID + " .post-category-viewTable").text() || "General";
-    //   var postDesc = $("#" + clickedPostID + " .post-description-viewTable").text();
-    //   var postfull = $("#" + clickedPostID + " .post-full-viewTable").html();
-    //   var postImageUrl = $("#" + clickedPostID + " .image-address").text();
-    //   var postCreationDate = $("#" + clickedPostID + " .creationTime").text();
-    //   var postCreationDate = $("td#" + clickedPostID + "+td+td.creationTime").text();
+    $(".catsCont .delete").click(function(e){
+      var sure = confirm("Are you sure to delete this category?");
+      if(sure){
+        var clicked = e.currentTarget.parentElement.id;
+        var id = clicked.replace('del-','');
 
-    //   if (postCat.toLowerCase() == "feminists rising")
-    //     postCat = "feminists_rising";
-
-    //   $("#postTitleOnEditPop").val(postTitle);
-    //   $("#postDescOnEditPop").val(postDesc);
-
-    //   $("#catOnEditPop").val(postCat);
-    //   $("#catOnEditPop").material_select();
-
-    //   // tinymce.get('postfullOnEditPop').setContent(postfull, {   format: "raw" });
-    //   tinymce
-    //     .get('postfullOnEditPop')
-    //     .setContent(postfull, {format: 'raw'});
-    //   // tinyMCE.activeEditor.setContent(postfull);
-
-    //   Materialize.updateTextFields();
-
-    //   $("#edit_postPop").removeClass('hide');
-    // });
+        $.ajax({
+          type: 'DELETE',
+          url: "/api/deleteCategory",
+          data: {
+            catname: id
+          },
+          success: function(data) {
+            Materialize.toast(data.message, 3000);
+            $(id).remove();
+          },
+          error: function(err) {
+            Materialize('error', 3000, 'rounded');
+          }
+        });
+      }
+    });
 
     $('.newCatBtn').click(function(e){
       $('#create_catPop, #create_catPop .popup-overlay').removeClass('hide');
     });
 
     $('.catsCont .edit').click(function(e){
-      var thisCat = e.currentTarget.parentElement.nextSibling.nextSibling.textContent;
+      var thisCat = e.currentTarget.id;
+      thisCat = thisCat.replace('edit-', '');
+      $('#Catname').val(thisCat);
+      Materialize.updateTextFields();
 
       $('#edit_catPop, #edit_catPop .popup-overlay').removeClass('hide');
-    });
-
-    $('.catsCont .delete').click(function(e){
-      var thisCat = e.currentTarget.parentElement.parentElement.nextSibling.nextSibling.textContent;
-
     });
 
     $(".deleteAction_viewTable").click(function (e) {
@@ -131,33 +149,6 @@ tinymce.init({
       't alignjustify | bullist numlist outdent indent | link image ',
   content_css: ['//fonts.googleapis.com/css?family=Lato:300,300i,400,400i', '//www.tinymce.com/css/codepen.min.css']
 });
-
-// function attemptLogin() {
-//   $(".loginSpinner").removeClass("hide");
-//   $.ajax({
-//     type: "POST",
-//     url: "/api/login",
-//     data: {
-//       loginCred: $("#cred_login").val(),
-//       password: $("#password_login").val()
-//     },
-//     success: function (data) {
-//       $(".loginSpinner").addClass("hide");
-//       Materialize.toast(data, 4000);
-//       window
-//         .location
-//         .reload();
-//     },
-//     error: function (error) {
-//       $(".loginSpinner").addClass("hide");
-//       Materialize.toast("Incorrect email and password combination", 5000);
-//       // $("#email_login").val('');
-//       $("#password_login").val('');
-//       $("#password_login").focus();
-//     }
-//   });
-//   return false;
-// }
 
 var Upload = function (file) {
   this.file = file;
@@ -347,8 +338,8 @@ function writeSiteInfo(){
   var igUrl = $('#igUrl').val();
 
   $.ajax({
-    type: "POST",
-    url: "/api/updateSiteInfo",
+    type: "PATCH",
+    url: "/api/metadata",
     data: {
       aboutColoured: aboutColoured,
       aboutAuthor: aboutAuthor,
@@ -369,3 +360,44 @@ function writeSiteInfo(){
   return false;
 }
 
+function createNewCat() {
+  $('#create_catPop, #create_catPop .popup-overlay').addClass('hide');
+  var catName = $('#newCat').val();
+
+  $.ajax({
+    type: 'PUT',
+    url: '/api/editCategory',
+    data: {
+      name: catName
+    },
+    success: function(data){
+      Materialize.toast("successfull!", 3000, 'rounded');
+      window.location.reload();
+    },
+    error: function(error){
+      Materialize.toast('error creating category', 4000);
+    }
+  });
+  return false;
+}
+
+function editCat() {
+  $('#edit_catPop, #edit_catPop .popup-overlay').addClass('hide');
+
+  var catName = $('#Catname').val();
+
+  $.ajax({
+    type: 'PUT',
+    url: "/api/createCategory",
+    data: {
+      name: catName
+    },
+    success: function(data){
+      Materialize.toast("successfull!", 3000, 'rounded');
+    },
+    error: function(error){
+      Materialize.toast('error creating category', 4000);
+    }
+  });
+  return false;
+}

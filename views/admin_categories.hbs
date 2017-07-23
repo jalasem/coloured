@@ -17,42 +17,17 @@
 
     <div class="catsCont container row teal-text text-darken-1">
       <br>
-      <div class="col s12 m6 l4">
+      {{#each categories}}
+      <div class="col s12 m6 l4 name">
         <div class="card">
           <p>
-            <i class="icon ion-edit edit x2"></i>
-            <span class="remove right"><i class="icon ion-close-circled x2 delete"></i></span>
+            <i id="edit-{{name}}" class="icon ion-edit edit x2"></i>
+            <span id="del-{{name}}" class="remove right"><i class="icon ion-close-circled x2 delete"></i></span>
           </p>
-          <p class="flow-text center">Law</p>
+          <p class="flow-text center">{{name}}</p>
         </div>
       </div>
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <p>
-            <i class="icon ion-edit edit x2"></i>
-            <span class="remove right"><i class="icon ion-close-circled x2 delete"></i></span>
-          </p>
-          <p class="flow-text center">Africa</p>
-        </div>
-      </div>
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <p>
-            <i class="icon ion-edit edit x2"></i>
-            <span class="remove right"><i class="icon ion-close-circled x2 delete"></i></span>
-          </p>
-          <p class="flow-text center">Culture</p>
-        </div>
-      </div>
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <p>
-            <i class="icon ion-edit edit x2"></i>
-            <span class="remove right"><i class="icon ion-close-circled x2 delete"></i></span>
-          </p>
-          <p class="flow-text center">Feminists Rising</p>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </main>
 
@@ -71,7 +46,7 @@
           </div>
           <div class="popup-content row center-align" style="height: auto;">
             <div class="card content-card" style="padding-top: 1.5rem; height: auto;">
-              <form onsubmit="createCategory(); return false;" class="container">
+              <form onsubmit="createNewCat(); return false;" class="container">
                 <div class="input-field col s12">
                   <input type="text" id="newCat">
                   <label for="newCat">Category Name</label>
@@ -99,9 +74,9 @@
           </div>
           <div class="popup-content row center-align" style="height: auto;">
             <div class="card content-card" style="padding-top: 1.5rem; height: auto;">
-              <form onsubmit="createCategory(); return false;" class="container">
+              <form onsubmit="editCat(); return false;" class="container">
                 <div class="input-field col s12">
-                  <input type="text" id="newCat">
+                  <input type="text" id="Catname">
                   <label for="newCat">Category Name</label>
                   <button class="btn teal" type="submit">Create</button>
                 </div>

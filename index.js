@@ -80,7 +80,6 @@ const GetFeaturedPosts = () => {
     .find({featured: true})
     .exec((err, data) => {
       if (err) {
-        console.log(JSON.stringify(err, undefined, 2));
         return err;
       } else {
         return data;
@@ -234,10 +233,11 @@ hbs.registerHelper('getPostTime', (timeT) => {
 });
 
 router.get('/', (req, res) => {
-  Promise.all([GetPublishedPosts(), GetCategories(), GetMetadata()]).then(data => {
+  Promise.all([GetPublishedPosts(), GetCategories(), GetMetadata(), GetFeaturedPosts()]).then(data => {
     let posts = data[0];
     let categories = data[1];
     let metadata = data[2][0];
+    let featured = data[3];
     let empty = true;
     if(posts.length > 0)
       empty = false;
@@ -245,6 +245,9 @@ router.get('/', (req, res) => {
       posts: posts.reverse(),
       categories,
       metadata,
+      featured,
+      home: true,
+      postsGroupTitle: "LATEST POSTS",
       thisPage: {
         title: "Home",
         home: true
@@ -305,6 +308,17 @@ router.get('/p/:year/:month/:slug', (req, res) => {
     })
   })
 });
+
+router.get('/about', (req, res) => {
+  Promise.all([GetMetadata()]).then(data => {
+    let metadata = data[0][0];
+
+    res.render('about', {
+      metadata,
+      about: metadata.about
+    })
+  });
+})
 
 router.post('/api/login', (req, res) => {
   // login
@@ -521,6 +535,37 @@ router.post('/api/editPost/:slug', (req, res) => {
   })
 });
 
+router.post('/api/featurePost', (req, res) => {
+  let slug =  req.body.slug;
+  Post.count({featured: true}, (err, count) => {
+    if(!err){
+      if(count <= 3){
+        Post.findOneAndUpdate({slug: slug}, {featured: true}, err => {
+          if(!err)
+            res.send({message: 'post featured successfully', code: 'OK'});
+          if(err){
+            res.send({message: 'error featurung post. Try again later', code: 'NOT_OK'});
+            throw err;
+          }
+        })
+      } else {
+        res.send({message: 'Maximum no. of featured post is three(3)', code: 'NOT_OK'});
+      }
+    }
+  });
+});
+
+router.delete('/api/deletePost', (req, res) => {
+  let slug = req.body.postID;
+  Post.deleteOne({slug: slug}, err => {
+    if(!err){
+      res.send({message: 'post deleted successfully', code: 'OK'});
+    } else {
+      res.send({message: 'Could not delete post', code: 'NOT_OK'});
+    }
+  });
+});
+
 router.post('/api/createCategory', (req, res) => {
   let name = req.body.name,
     thisTime = new Date(),
@@ -538,6 +583,40 @@ router.post('/api/createCategory', (req, res) => {
       console.log("error creating post:" + JSON.stringify(err, undefined, 2));
       res.send({message: 'error creating category', code: 'NOT_OK'});
     });
+});
+router.put('/api/editCategory', (req, res) => {
+  let name = req.body.name,
+    thisTime = new Date(),
+    month = config.monthNames[thisTime.getMonth()],
+    year = thisTime.getFullYear();
+
+  let newCat = new Category({name, month, year});
+
+  newCat
+    .save()
+    .then(() => {
+      res.send({message: "Category created successfully", code: 'OK'});
+    })
+    .catch(err => {
+      console.log("error creating post:" + JSON.stringify(err, undefined, 2));
+      res.send({message: 'error creating category', code: 'NOT_OK'});
+    });
+});
+router.delete('/api/deleteCategory', (req, res) => {
+  let name = req.body.catname;
+  Category.findOneAndRemove({name: name}, (errr) => {
+    if(!errr){
+      Post.update({category: name}, {category: 'general'}, err => {
+        if(!err){
+          res.send({message: "success", code: 'OK'});
+        } else {
+          res.send({message: "error", code: "NOT_OK"})
+        }
+      });
+    } else {
+      res.send({message: "error", code: "NOT_OK"})
+    }
+  });
 });
 
 router.patch('/api/metadata', (req, res) => {
@@ -812,8 +891,6 @@ app.use('/', router);
 
 const port = process.env.PORT || 5050;
 app.listen(port, () => {
-
-
 
   console.log(`server running on port ${port}`);
 });
