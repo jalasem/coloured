@@ -30,43 +30,29 @@
         </thead>
 
         <tbody>
-          {{#each posts}} {{#if title}} {{#if published}}
-          {{> single_post_cell}}
-          {{!-- <tr id="tr{{@key}}">
-            <td id="{{@key}}">
+          {{#each posts}}
+          <tr class="featured" id="tr{{slug}}">
+            <td id="{{slug}}">
               <p class="postTitle_viewTable"><a href="/posts/{{title}}" target="_blank">{{title}}</a></p>
               <div class="hide">
                 <div class="post-description-viewTable">{{description}}</div>
                 <span class="post-category-viewTable">{{category}}</span>
                 <div class="post-full-viewTable">{{full_post}}</div>
                 {{#if hasImage}}
-                  <span class="image-address">{{media.url}}</span>
-                {{/if}}
+                <span class="image-address">{{media.url}}</span> {{/if}}
               </div>
               <p class="actionsOnPost_viewTable">
-                <a href="/controls/posts/edit/{{@key}}" class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</a>
+                <span class="unfeatureAction_viewTable waves-effect btn-flat blue-grey lighten-2">UNFEATURE</span>
+                <a href="/controls/posts/edit/{{slug}}" class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</a>
                 <span class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">DELETE</span>
-                <a href="/posts/{{title}}" target="_blank" class="viewAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
+                <a href="/p{{url}}" target="_blank" class="viewAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
               </p>
             </td>
             <td>Published</td>
-            <td class="creationTime">{{getPostTime createOn}}</td>
-          </tr> --}}
-          {{else}}
-          <tr class="draft" id="tr{{@key}}">
-            <td id="{{@key}}">
-              <p class="postTitle_viewTable"><a href="/posts/{{title}}" target="_blank">{{title}}</a></p>
-              <p class="actionsOnPost_viewTable">
-                <span class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</span>
-                <span class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">DELETE</span>
-                <a href="/posts/{{title}}" target="_blank" class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
-              </p>
-            </td>
-            <td>Draft</td>
-            <td>{{getPostTime createOn}}</td>
+            <td class="creationTime">{{getPostTime createdOn}}</td>
+            <td class="creationTime">{{created_on}}</td>
           </tr>
-          {{/if}} {{/if}} {{/each}}
-
+          {{/each}}
         </tbody>
       </table>
     </div>

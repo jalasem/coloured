@@ -17,10 +17,37 @@ $(document)
           },
           error: function (error) {
             Materialize.toast(JSON.stringify(error, undefined, 2), 3000, 'rounded');
+            console.log(error);
           }
         });
       }
     });
+
+    $('.unfeatureAction_viewTable').click(function (e) {
+      var sure = confirm("Sure to unfeature this Post?");
+      if (sure) {
+        var clickedPostID = e.currentTarget.parentElement.parentElement.id;
+        $.ajax({
+          type: 'POST',
+          url: '/api/unfeaturePost',
+          data: {
+           slug: clickedPostID
+          },
+          success: function (data) {
+            Materialize.toast(JSON.stringify(data.message, undefined, 2), 3000, 'rounded');
+            window.location.reload();
+            if(data.code == "OK")
+              $('#tr' + clickedPostID).addClass('featured');
+          },
+          error: function (error) {
+            Materialize.toast(JSON.stringify(error, undefined, 2), 3000, 'rounded');
+            console.log(error);
+          }
+        });
+      }
+    });
+
+
 
     $(".deleteAction_viewTable").click(function (e) {
       var sure = confirm("are you sure to delete this post?");

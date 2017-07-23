@@ -554,6 +554,19 @@ router.post('/api/featurePost', (req, res) => {
     }
   });
 });
+router.post('/api/unfeaturePost', (req, res) => {
+  let slug =  req.body.slug;
+
+  Post.findOneAndUpdate({slug: slug}, {featured: false}, err => {
+    if(!err)
+      res.send({message: 'post unfeatured successfully', code: 'OK'});
+    if(err){
+      res.send({message: 'error featurung post. Try again later', code: 'NOT_OK'});
+      throw err;
+    }
+  })
+
+});
 
 router.delete('/api/deletePost', (req, res) => {
   let slug = req.body.postID;
@@ -750,7 +763,7 @@ router.get('/controls/posts/featured', (req, res) => {
       let empty = true;
       if(posts.length > 0)
         empty = false;
-      return res.render("admin_published_posts", {
+      return res.render("admin_featured", {
         adminfname, adminlname, posts,
         // nop, nopp, noup,
         thisPage: {

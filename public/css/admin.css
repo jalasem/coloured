@@ -515,3 +515,8 @@ tr.featured:hover .actionsOnPost_viewTable .btn {
 .btn-large i {
 	font-size: 1.25rem;
 }
+
+.actionsOnPost_viewTable .btn-flat {
+    border: 1px black solid;
+    margin-right: 2px;
+}

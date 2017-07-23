@@ -395,3 +395,8 @@ section.blog-posts .blog-post {
     margin-bottom: 1rem;
     width: 100%;
 }
+
+.actionsOnPost_viewTable .btn-flat {
+    border: 1px black solid;
+    margin-right: 2px;
+}
