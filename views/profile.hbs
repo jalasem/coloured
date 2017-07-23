@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> admin_head}}
+
+<body>
+
+  {{> admin_nav}}
+  <main>
+    <div class="container">
+      <br><br>
+      <h4>Profile Settings</h4>
+      <form id="changePass" class="row">
+        <div class="container">
+          <p class="flow-text"> &nbsp; Change Password</p>
+          <div class="input-field col s12 m6">
+            <i class="icon prefix ion-locked"></i>
+            <input type="password" id="newPass1" required>
+            <label for="newPass1">New Password</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="icon prefix ion-lock-combination"></i>
+            <input type="password" id="newPass2" required>
+            <label for="newPass2">Confirm Password</label>
+            <p id="error-text" class="red-text" style="margin-top: -15px;"></p>
+          </div>
+          <div class="input field col s12">
+            <button class="btn indigo disabled waves-effect waves-light" id="changePassBtn">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+
+  {{> admin_footer}}
+  <script>
+    $(document).ready(function () {
+      $('#newPass2').keyup(function () {
+        if ($('#newPass1').val() == $('#newPass2').val()) {
+          $('#changePassBtn').removeClass('disabled');
+          $('#error-text').text('');
+        } else {
+          $('#changePassBtn').addClass('disabled');
+          if ($('#newPass1').val().length <= $('#newPass2').val().length) {
+            $('#error-text').text('password must match!');
+          } else {
+            $('#error-text').text('');
+          }
+        }
+      });
+    });
+    $('#changePass').submit(function(e){
+      e.preventDefault();
+
+      $.ajax({
+        type: "PUT",
+        url: '/api/changePass',
+        data: {
+          newpass: $('#newPass2').val()
+        },
+        success: function(data){
+          if(data.code == 'OK'){
+            Materialize.toast("Password changed successfully!", 4000, 'rounded');
+          } else {
+            Materialize.toast(data.message, 3000);
+          }
+        },
+        error: function(err){
+          console.log(err);
+          Materialize.toast("error", 3000);
+        }
+      })
+
+      return false;
+    })
+  </script>
+</body>
+
+</html>

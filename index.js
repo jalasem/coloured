@@ -342,6 +342,7 @@ router.post('/api/login', (req, res) => {
               let user = {
                 authorized: result,
                 id: data._id,
+                username: data.username,
                 name: data.fullname
               }
               req.session.user = user;
@@ -432,6 +433,21 @@ router.post('/api/createAdmin', (req, res, next) => {
       res.send({message: 'error creating admin', code: 'NOT_OK'});
     });
 });
+
+router.put('/api/changePass', (req, res) => {
+  let username = req.session.user.username;
+  let newPass = req.body.newpass;
+  let salt = bcrypt.genSaltSync(5);
+  let password = bcrypt.hashSync(newPass, salt);
+
+  Admin.findOneAndUpdate({username: username}, {password: password, salt: salt}, err => {
+    if(!err) {
+      res.send({message: "sucess", code: 'OK'});
+    } else {
+      res.send({message: "error", code: 'NOT_OK'});
+    }
+  })
+})
 
 router.post('/api/upload/image', fileParser, (req, res) => {
   var imageFile = req.files.file;
