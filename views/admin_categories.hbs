@@ -76,9 +76,10 @@
             <div class="card content-card" style="padding-top: 1.5rem; height: auto;">
               <form onsubmit="editCat(); return false;" class="container">
                 <div class="input-field col s12">
-                  <input type="text" id="Catname">
+                  <p id="oldName" class="hide"></p>
+                  <input type="text" id="Catname" required>
                   <label for="newCat">Category Name</label>
-                  <button class="btn teal" type="submit">Create</button>
+                  <button class="btn teal" type="submit">Update</button>
                 </div>
               </form>
             </div>

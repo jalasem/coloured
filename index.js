@@ -585,22 +585,24 @@ router.post('/api/createCategory', (req, res) => {
     });
 });
 router.put('/api/editCategory', (req, res) => {
-  let name = req.body.name,
-    thisTime = new Date(),
-    month = config.monthNames[thisTime.getMonth()],
-    year = thisTime.getFullYear();
+  let name = req.body.newName;
+  let oldName = req.body.name;
 
-  let newCat = new Category({name, month, year});
-
-  newCat
-    .save()
-    .then(() => {
-      res.send({message: "Category created successfully", code: 'OK'});
-    })
-    .catch(err => {
-      console.log("error creating post:" + JSON.stringify(err, undefined, 2));
-      res.send({message: 'error creating category', code: 'NOT_OK'});
-    });
+  Category.findOneAndUpdate({name: oldName}, {name: name}, (errr) => {
+    if(!errr) {
+      Post.update({category: oldName}, {category: name}, err => {
+        if(!err){
+            res.send({message: "success", code: 'OK'});
+          } else {
+            res.send({message: "error", code: "NOT_OK"});
+            console.log(JSON.stringify(err, undefined, 2));
+          }
+      })
+    } else {
+      res.send({message: "error", code: "NOT_OK"});
+      console.log(JSON.stringify(errr, undefined, 2));
+    }
+  });
 });
 router.delete('/api/deleteCategory', (req, res) => {
   let name = req.body.catname;

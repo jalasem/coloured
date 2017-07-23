@@ -40,6 +40,7 @@ $(document)
           success: function () {
             $("#tr" + clickedPostID).remove();
             Materialize.toast("Post successfully deleted", 4000, "rounded");
+            window.location.reload();
           },
           error: function (err) {
             Materialize.toast("there was an error deleteing this post!", 4000, 'rounded');
@@ -79,6 +80,7 @@ $(document)
     $('.catsCont .edit').click(function(e){
       var thisCat = e.currentTarget.id;
       thisCat = thisCat.replace('edit-', '');
+      $('#oldName').text(thisCat);
       $('#Catname').val(thisCat);
       Materialize.updateTextFields();
 
@@ -384,16 +386,19 @@ function createNewCat() {
 function editCat() {
   $('#edit_catPop, #edit_catPop .popup-overlay').addClass('hide');
 
-  var catName = $('#Catname').val();
+  var newName = $('#Catname').val();
+  var oldName = $('#oldName').text();
 
   $.ajax({
     type: 'PUT',
-    url: "/api/createCategory",
+    url: "/api/editCategory",
     data: {
-      name: catName
+      name: oldName,
+      newName: newName
     },
     success: function(data){
       Materialize.toast("successfull!", 3000, 'rounded');
+      window.location.reload();
     },
     error: function(error){
       Materialize.toast('error creating category', 4000);
