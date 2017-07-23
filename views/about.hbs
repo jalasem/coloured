@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+<style>
+    .about-panel {
+        margin-top: 2rem;
+        padding-top: 0rem;
+    }
+
+    .about-panel h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-panel h2 {
+        font-size: 2rem;
+    }
+
+    .about-panel h3,
+    h4 {
+        font-size: 1.8rem;
+    }
+</style>
+
+<body class="grey lighten-5">
+    <header>
+        {{> nav}}
+    </header>
+    <main class="row post-content" style="margin-bottom:3rem;">
+        <div class="container">
+            <div class="card-panel about-panel">
+                <br>
+                <h1>About Coloured</h1>
+                {{{ about }}}
+            </div>
+        </div>
+    </main>
+
+    {{> footer}}
+</body>
+
+</html>

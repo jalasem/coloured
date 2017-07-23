@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> admin_head}}
+
+<body>
+
+  {{> admin_nav}}
+  <main>
+    <a href="/controls/admin/createPost" class="newPostBtn btn indigo waves-effect waves-light">New Post</a>
+    <div class="fixed-action-btn">
+      <a href="/controls/admin/createPost" class="btn-floating btn-large indigo">
+        <i class="large icon ion-plus"></i>
+      </a>
+    </div>
+
+    <div class="container">
+      <br>
+      <div class="topInfoHeading">
+         <p class="left left-align">
+          <span> &nbsp; All ({{ nop }}) </span> &nbsp;
+          <span>Published ({{ nopp }}) </span> &nbsp;
+          <span>Draft ({{ noup }}) </span> &nbsp;
+        </p>
+        <p class="right"></p>
+      </div>
+      <table class="bordered highlight">
+        <thead>
+          <tr style="background: rgb(236, 239, 241);">
+            <th> &nbsp; TITLE</th>
+            <th>STATUS</th>
+            <th>CREATED ON</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#if empty}}
+            <p class="flow-text">No Post yet <a href="/create/post">Create your first Post</a></p>
+          {{else}}
+            {{#each posts}}
+              {{> single_post_cell}}
+            {{/each}}
+          {{/if}}
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!--<textarea class="hide">
+
+  </textarea>-->
+
+  {{> admin_popups}}
+  {{> admin_footer}}
+</body>
+
+</html>

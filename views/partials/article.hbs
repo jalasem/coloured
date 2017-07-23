@@ -1,0 +1,21 @@
+<article class="card blog-post">
+  {{#if media}}
+  <div class="card-image">
+    <img src="{{media.secure_url}}">
+  </div>
+  {{/if}}
+  <div class="blog-post-meta">
+    <a href="/category/{{category}}"><span class="label {{category}}_label"> {{category}} </span></a>
+    <span class="post-date"> {{ getPostTime createdOn }}</span>
+  </div>
+  <div class="card-content">
+    <a href="/p{{url}}">
+      <h3 class="card-title">{{title}}</h3>
+    </a>
+    <p>{{description}}...</p>
+  </div>
+  <div class="card-action">
+    <a href="/p{{url}}" class="btn-flat">Read more</a>
+    {{!--<a href="#!" class="right"><i class="icon ion-android-share-alt"></i></a>--}}
+  </div>
+</article>

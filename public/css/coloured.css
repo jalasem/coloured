@@ -1,0 +1,397 @@
+/*new*/
+
+body.grey.lighten-5 {
+    background-color: rgba(250, 250, 250, 0.13) !important;
+}
+
+nav>.container {
+    width: 95%;
+}
+
+nav a.brand-logo,
+nav li a {
+    color: #242626 !important;
+}
+
+nav ul a:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(224, 224, 224, 0.48);
+}
+
+.x1 {
+    font-size: 1rem;
+}
+
+.x15 {
+    font-size: 1.5rem;
+}
+
+.x2 {
+    font-size: 2rem;
+}
+
+.x25 {
+    font-size: 2.5rem;
+}
+
+.x3 {
+    font-size: 3rem;
+}
+
+.x35 {
+    font-size: 3.5rem;
+}
+
+.x4 {
+    font-size: 4rem;
+}
+
+.x45 {
+    font-size: 4.5rem;
+}
+
+.x5 {
+    font-size: 5rem;
+}
+
+.x55 {
+    font-size: 5.5rem;
+}
+
+nav {
+    box-shadow: 0 0 0;
+}
+
+nav.nav-extended .nav-wrapper {
+    border-bottom: 1px solid rgba(158, 158, 158, 0.28);
+    height: 6rem;
+    line-height: 6rem;
+}
+
+nav.nav-extended a.brand-logo img,
+footer.page-footer a.brand-logo img {
+    max-width: 6rem;
+}
+
+nav .nav-wrapper ul a.search-btn:hover {
+    margin-bottom: -4.5rem;
+}
+
+@media only screen and (min-width: 601px) {
+    nav,
+    nav .nav-wrapper i,
+    nav a.button-collapse,
+    nav a.button-collapse i {
+        height: 6rem;
+        line-height: 6rem;
+    }
+}
+
+nav.nav-extended .nav-wrapper a.brand-logo {
+    padding-left: 10%;
+}
+
+nav.nav-extended .nav-wrapper ul {
+    padding-right: 10%;
+}
+
+nav.nav-extended .nav-content {
+    position: relative;
+    line-height: normal;
+    display: flex;
+}
+
+nav.nav-extended .nav-content ul {
+    margin: auto;
+}
+
+nav.nav-extended .nav-content ul li a {
+    padding: 1em 5vw;
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 20%;
+    letter-spacing: 2px;
+}
+
+nav.nav-extended .nav-content ul li.feminists {
+    border-bottom: 4px solid yellow;
+}
+
+nav.nav-extended .nav-content ul li.law {
+    border-bottom: 4px solid red;
+}
+
+nav.nav-extended .nav-content ul li.culture {
+    border-bottom: 4px solid #4CAF50;
+}
+
+nav.nav-extended .nav-content ul li.africa {
+    border-bottom: 4px solid black;
+}
+
+nav.nav-extended .nav-content ul li.about {
+    border-bottom: 4px solid blue;
+}
+
+nav.nav-extended .nav-content.fixed {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    left: 0;
+    background: white;
+    z-index: 100000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+nav.nav-extended>.nav-wrapper.pinned {
+    position: fixed !important;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 100000;
+    padding: 0;
+    margin: -1rem 0 0rem;
+    background: white;
+}
+
+nav.nav-extended>.nav-wrapper.pinned a.brand-logo {
+    padding-top: 8px;
+}
+
+.section-heading {
+    border-top: 2px solid #464646;
+    border-bottom: 1px solid #DFDFDF;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1;
+    letter-spacing: 4.79px;
+    padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.featured-posts .col {
+    padding: 0;
+}
+
+.card .card-content .card-title {
+    font-size: 1.3125rem;
+    line-height: 1.75rem;
+    /*font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #311B92;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    color: #311B92;
+}
+
+.card-action a.btn-flat {
+    margin: -15px 0;
+    padding: 0px 1em;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
+    color: #263238;
+}
+
+.card .blog-post-meta {
+    color: rgb(153, 153, 153);
+    display: block;
+    padding: 16px 22px;
+    border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.card .card-image .card-title {
+    padding: 9px 10px;
+    background: rgba(0, 0, 0, 0.62);
+    font-size: large;
+    text-align: center;
+    width: 100%;
+    min-height: 5rem;
+}
+
+main.row .card .card-content p {
+    margin: 0.5rem 0;
+    color: inherit;
+}
+
+.label {
+    text-align: left;
+    background-color: #FFF59D;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 12px;
+    color: black;
+    border-radius: 16px;
+    transition: all 0.15s ease;
+}
+
+.label.feminists-rising_label,
+.label.feminists.rising_label {
+    background-color: #11F176;
+}
+
+.label.feminism_label {
+    background: lavenderblush;
+}
+
+.label.general_label {
+    background-color: #FFF176;
+}
+
+.label.africa_label {
+    background-color: #CFD8DC;
+}
+
+.label.law_label {
+    background-color: #FFAB91;
+}
+
+.label.no_of_posts {
+    background-color: #CFD8DC;
+}
+
+.label.culture_label {
+    background-color: #E1BEE7;
+}
+
+.blog-post-meta .post-date {
+    float: right;
+}
+
+ul.inline-list li {
+    display: inline;
+}
+
+aside article.about-me p {
+    text-align: justify;
+}
+
+aside section.categories.card ul li a {
+    display: block;
+    width: auto;
+    margin: 1em 10%;
+}
+
+.card-panel.newsletter {
+    padding: 1px 24px;
+}
+
+.pagination li.active {
+    background-color: #546E7A;
+}
+
+.card.social .card-content {
+    padding: 10px 20px;
+}
+
+.card.social .card-content li {
+    padding: 0.5rem;
+}
+
+.card.social .card-content a {
+    font-size: 1.1rem;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.featured-posts .card .card-image img {
+    min-height: 17.4rem;
+}
+
+footer ul.social li {
+    display: inline;
+}
+
+@media only screen and (min-width: 993px) {
+    header .container,
+    main .container {
+        width: 85%;
+    }
+    .featured-posts .card-image img {
+        min-height: 17rem;
+    }
+    aside article.about-me {}
+}
+
+@media only screen and (max-width: 992px) and (min-width: 600px) {
+    main .container {
+        width: 90%;
+    }
+    nav.nav-extended .nav-content ul li a {
+        padding: 1em 4vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    nav.nav-extended .nav-content ul li a {
+        padding: 1em 2vw;
+    }
+    nav,
+    nav .nav-wrapper i,
+    nav a.button-collapse,
+    nav a.button-collapse i {
+        height: 6rem;
+        line-height: 6rem;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    nav.nav-extended .nav-content ul li a {
+        padding: 1em 1vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    nav.nav-extended .nav-content ul li a {
+        padding: 1em 10px;
+        letter-spacing: 1px;
+        font-size: 0.85rem;
+        border: 1px solid beige;
+        margin-right: 0px;
+    }
+}
+
+main.row {
+    margin: 2rem auto;
+    width: 90%;
+}
+
+/*main.row.post-content {
+    margin: -1rem auto;
+    width: 90%;
+}*/
+main.row.post-content {
+    margin: -1rem auto;
+    width: 100%;
+}
+
+section.blog-posts {
+    -moz-column-width: 220px;
+    -webkit-column-width: 220px;
+    -o-column-width: 220px;
+    column-width: 220px;
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-gap: 1rem;
+    -webkit-column-gap: 1rem;
+    -o-column-gap: 1rem;
+    column-gap: 1rem;
+}
+
+section.blog-posts .blog-post {
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: 100%;
+}

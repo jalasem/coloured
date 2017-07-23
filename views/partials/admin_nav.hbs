@@ -1,0 +1,91 @@
+<div class="navbar-fixed">
+    <!--<nav class="nav-extended grey lighten-4">-->
+    <nav class="nav grey lighten-4">
+      <div class="nav-wrapper white">
+        <a href="/controls/admin" class="brand-logo left">
+          <img style="max-width:6rem" src="/images/logo.png" alt="Coloured" class="img-responsive">
+        </a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="#" class="dropdown-button waves-effect" data-activates='profileDrop' data-constrainWidth="false" data-belowOrigin="true">
+            <i class="icon ion-person left"></i>
+            {{adminfname}}
+            <span class="hide-on-small-only">{{adminlname}}</span>
+            <i class="icon ion-ios-arrow-down right"></i>
+          </a></li>
+        </ul>
+        <ul id='profileDrop' class='dropdown-content' style="margin-left: 3%;">
+          <li><a href="#" class="waves-effect"><i class="icon ion-person"></i>Profile</a></li>
+          <li><a href="/controls/logout" class="waves-effect"><i class="icon ion-log-out"></i>Logout</a></li>
+        </ul>
+      </div>
+      <!--<div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab active"><a class="active" target="_self" href="#">POSTS</a></li>
+          <li class="tab"><a target="_self" href="#">FEATURED</a></li>
+          <li class="tab"><a target="_self" href="#">CATEGORIES</a></li>
+          <li class="tab"><a href="#">ABOUT</a></li>
+        </ul>
+      </div>-->
+    </nav>
+  </div>
+  <!--<div id="top_spacer"></div>-->
+  <aside class="blue-grey lighten-5">
+    <span id="menuToggler" class="pulse">
+      <i class="icon ion-navicon x2"></i>
+    </span>
+    <a href="/" target="_blank" class="viewBlog blue-grey-text text-darken-2">
+        <i class="icon ion-laptop x15 tooltipped" data-position="right" data-delay="50" data-tooltip="View Website"></i>
+        <span class="canGo">View Website</span>
+    </a>
+    <ul class="collapsible" data-collapsible="expndable">
+      <li>
+        <div class="collapsible-header blue-grey-text text-darken-2 active"><i class="icon ion-document-text tooltipped" data-position="right" data-delay="50" data-tooltip="Posts"></i>
+          <span class="canGo">Posts</span>
+        </div>
+        <div class="collapsible-body">
+          <ul>
+            <li>
+              <a href="/controls/admin" class="{{#if thisPage.admin_home}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-ios-paper tooltipped" data-position="right" data-delay="50" data-tooltip="All Posts"> </i> <span class="canGo">All Posts ({{ nop }}) </span></a>
+            </li>
+            <li>
+              <a href="/controls/posts/published" class="{{#if thisPage.published}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-ios-book tooltipped" data-position="right" data-delay="50" data-tooltip="Published"> </i> <span class="canGo">Published ({{ nopp }}) </span></a>
+            </li>
+            <li><a href="/controls/posts/drafts" class="{{#if thisPage.draft}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-edit tooltipped" data-position="right" data-delay="50" data-tooltip="Drafts"> </i> <span class="canGo">Drafts ({{ noup }}) </span></a></li>
+            <li><a href="/controls/admin/posts/featured" class="{{#if thisPage.featured}}active{{/if}} blue-grey-text text-darken-2"><i class="icon ion-pound tooltipped" data-position="right" data-delay="50" data-tooltip="Featured"> </i> <span class="canGo">Featured</span></a></li>
+            <li><a {{#if thisPage.categories}}class="active"{{/if}} href="/controls/categories" class="blue-grey-text text-darken-2"><i class="icon ion-ios-keypad tooltipped" data-position="right" data-delay="50" data-tooltip="Categories"> </i> <span class="canGo">Categories</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="icon ion-ios-information tooltipped" data-position="right" data-delay="50" data-tooltip="About"></i>
+          <span class="canGo">ABOUT</span>
+        </div>
+        <div class="collapsible-body">
+          <ul>
+            <li>
+              <a {{#if thisPage.site_info}}class="active"{{/if}} href="/controls/siteInfo" class="blue-grey-text text-darken-2"><i class="icon ion-ios-information-outline tooltipped" data-position="right" data-delay="50" data-tooltip="Site Info"> </i> <span class="canGo">Site Info</span></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      {{!-- <li>
+        <div class="collapsible-header"><i class="icon ion-ios-gear tooltipped" data-position="right" data-delay="50" data-tooltip="Settings"></i>
+          <span class="canGo">SETTINGS</span>
+        </div>
+        <div class="collapsible-body">
+          <ul>
+            <li>
+              <a href="#all-posts" class="blue-grey-text text-darken-2"><i class="icon ion-ios-infinite tooltipped" data-position="right" data-delay="50" data-tooltip="404 Page"> </i> <span class="canGo">404 Content</span></a>
+            </li>
+            <li>
+              <a href="#logs" class="blue-grey-text text-darken-2"><i class="icon ion-ios-list-outline tooltipped" data-position="right" data-delay="50" data-tooltip="logs"> </i> <span class="canGo">Logs</span></a>
+            </li>
+          </ul>
+        </div>
+      </li> --}}
+      <!--<li>
+        <div class="collapsible-header"><i class="icon ion-ios-settings-strong tooltipped" data-position="right" data-delay="50" data-tooltip="More features"></i>          <span class="canGo">More Features</span></div>
+        <div class="collapsible-body"><span class="canGo">Coming Soon</span></div>
+      </li>-->
+    </ul>
+  </aside>

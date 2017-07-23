@@ -1,0 +1,260 @@
+{
+  "controls": {
+    "featured": {
+      "no": 3,
+      "limit": 3
+    }
+  },
+  "metadata": {
+    "author": {
+      "about": "Ohotu is Yala, an almost writer, a constant reader, talker, and (law) student. Everything she writes on here (when she can take time off reading) will span issues ranging from feminism to Nigeria, to law and Africa, to culture and to life, to people and well, some others. Ohotu writes because the words keep forming in her head, nothing special.",
+      "facebook": "ohotu",
+      "instagram": "ohotu",
+      "picture": "/images/logo.png",
+      "twitter": "ohotu"
+    }
+  },
+  "blog": {
+    "admins": {
+      "users": {
+        "6I9bX9BbcqYd4vDni4gSMdp3DnI3": {
+          "disabled": false,
+          "displayName": "Ajala Abdul-Samii",
+          "email": "kgasta@gmail.com",
+          "password": "$2a$05$J1eNYPilRj1czjz1/42nPOwIS8fKzEpLQLv2zzcgewzCw0Ml4dEju",
+          "salt": "$2a$05$J1eNYPilRj1czjz1/42nPO",
+          "groups": {
+            "group1": true
+          },
+          "created_at": 1498433399475,
+          "last_login": 1498433399999
+        },
+        "V1OzLCEb6yMvf9X3pPMWgCMuyz93": {
+          "disabled": false,
+          "displayName": "Technical Testing",
+          "email": "test@testing.com",
+          "password": "$2a$05$rDxV/T4biqiPKg3MCbMadOKXHbnrGWqV9YMeHM4xAV55MSW8gfiCG",
+          "salt": "$2a$05$rDxV/T4biqiPKg3MCbMadO",
+          "groups": {
+            "group1": true
+          },
+          "created_at": 1498433399475,
+          "last_login": 1498433399999
+        },
+        "fyQEB9wrlubQaVYnLUAZ7s7sl6e2": {
+          "disabled": false,
+          "displayName": "Ohotu Ogbeche",
+          "email": "ohotu@coloured.com.ng",
+          "password": "$2a$05$CDpqSh6NUzQT3Ta25fN8nOCUVpY1Aaywr5Hv295JnBSTkn/q78Zhe",
+          "salt": "$2a$05$CDpqSh6NUzQT3Ta25fN8nO",
+          "groups": {
+            "group1": true
+          },
+          "created_at": 1498433399475,
+          "last_login": 1498433399999
+        }
+      },
+      "groups": {
+        "Administrators": {
+          "group_name": "Administrators",
+          "group_description": "Users who can do anything!",
+          "no_of_users": 2,
+          "members": {
+            "fyQEB9wrlubQaVYnLUAZ7s7sl6e2": true,
+            "6I9bX9BbcqYd4vDni4gSMdp3DnI3": true
+          }
+        },
+        "hiuh898hhknD8n2": {
+          "group_name": "Moderators",
+          "group_description": "Users who can only moderate!",
+          "no_of_users": 1,
+          "members": {
+            "V1OzLCEb6yMvf9X3pPMWgCMuyz93": true
+          }
+        }
+      }
+    },
+    "categories": {
+      "8u89u98hkjjkkn": {
+        "name": "africa",
+        "nop": 1,
+        "nopp": 1,
+        "posts": {
+          "published": {
+            "-KnW_mVgXwIRCHvuF0b0": true
+          }
+        }
+      },
+      "8u89u98hkjjkkb": {
+        "name": "culture",
+        "nop": 1,
+        "nopp": 1,
+        "posts": {
+          "published": {
+            "-KnW_mVgXwIRCHvuF0b0": true
+          }
+        }
+      },
+      "8u89u98hkjjkkc": {
+        "name": "feminism",
+        "nop": 3,
+        "nopp": 3,
+        "posts": {
+          "published": {
+            "-KnW_mVgXwIRCHvuF0b0": true,
+            "-KnW_mqyhvYrHl2xK18F": true,
+            "-KnW_mryyE5Mj44a509F": true
+          }
+        }
+      },
+      "8u89u98hkjjkka": {
+        "name": "feminists rising",
+        "nop": 1,
+        "nopp": 1,
+        "posts": {
+          "published": {
+            "-KnW_mVgXwIRCHvuF0b0": true
+          }
+        }
+      },
+      "8u89u98hkjjkkz": {
+        "name": "law",
+        "nop": 2,
+        "nopp": 1,
+        "posts": {
+          "published": {
+            "-KnW_mVgXwIRCHvuF0b0": true
+          },
+          "draft": {
+            "-KnW_mxBr0VPo6ZcU1NT": true
+          }
+        }
+      }
+    },
+    "featured": {
+      "-KnW_mVaMZXITmLKwZaO": true,
+      "-KnW_mxBr0VPf6ZcU1NT": true,
+      "-KnW_mqyhvYrHl2xK18F": true
+    },
+    "posts": {
+      "-KnW_mVaMZXITmLKwZaO": {
+        "categoryID": "8u89u98hkjjkkc",
+        "createOn": 1498433399469,
+        "description": "If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust, \"a non-profit civil society dedicated to the progressive study of African history and culture.\" At least I have found useful information on the website while researching topics that have...",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "hasImage": true,
+        "media": {
+          "type": "image",
+          "url": "/images/ted13b.jpg"
+        },
+        "published": true,
+        "title": "Gender equality and it’s socio-economic impact"
+      },
+      "-KnW_mVgXwIRCHvuF0b0": {
+        "categoryID": "8u89u98hkjjkkz",
+        "createOn": 1498433399475,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et animi inventore, laborum quia aliquam. Laborum, minima quasi recusandae autem ipsum fugiat itaque excepturi sint vitae, cupiditate dolor consequuntur porro dolorem",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "published": true,
+        "title": "When rape becomes tenable in the court of law"
+      },
+      "-KnW_moZtRd0IAiFQXs1": {
+        "categoryID": "8u89u98hkjjkkn",
+        "createOn": 1498433400747,
+        "description": "If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust, \"a non-profit civil society dedicated to the progressive study of African history and culture.\" At least I have found useful information on the website while researching topics that have...",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "published": true,
+        "title": "Indicators of our diminishing culture and heritage"
+      },
+      "-KnW_mqyhvYrHl2xK18F": {
+        "categoryID": "8u89u98hkjjkka",
+        "createOn": 1498433400901,
+        "description": "If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust, \"a non-profit civil society dedicated to the progressive study of African history and culture.\" At least I have found useful information on the website while researching topics that have...",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "hasImage": true,
+        "media": {
+          "type": "image",
+          "url": "/images/ted13b.jpg"
+        },
+        "published": true,
+        "title": "Gender equality and it’s socio-economic impact"
+      },
+      "-KnW_mryyE5Mj44a509F": {
+        "categoryID": "8u89u98hkjjkkc",
+        "createOn": 1498433400965,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et animi inventore, laborum quia aliquam. Laborum, minima quasi recusandae autem ipsum fugiat itaque excepturi sint vitae, cupiditate dolor consequuntur porro dolorem",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "published": true,
+        "title": "When the clitoris become dangerous"
+      },
+      "-KnW_msdaXA_ehe9sjjy": {
+        "categoryID": "8u89u98hkjjkkb",
+        "createOn": 1498433401008,
+        "description": "If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust, \"a non-profit civil society dedicated to the progressive study of African history and culture.\" At least I have found useful information on the website while researching topics that have...",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "published": true,
+        "title": "The essence of Culture"
+      },
+      "-KnW_mwpT5biiErnLUAV": {
+        "categoryID": "8u89u98hkjjkkn",
+        "createOn": 1498433401276,
+        "description": "If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust, \"a non-profit civil society dedicated to the progressive study of African history and culture.\" At least I have found useful information on the website while researching topics that have...",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "published": true,
+        "title": "What if our forefathers were here"
+      },
+      "-KnW_mxBr0VPf6ZcU1NT": {
+        "createOn": 1498433401299,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et animi inventore, laborum quia aliquam. Laborum, minima quasi recusandae autem ipsum fugiat itaque excepturi sint vitae, cupiditate dolor consequuntur porro dolorem",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "hasImage": true,
+        "media": {
+          "type": "image",
+          "url": "/images/sexy_at_beach.jpg"
+        },
+        "published": true,
+        "title": "Utilizing the power of the feminine gender"
+      },
+      "-KnW_mxBr0VPo6ZbU1NT": {
+        "categoryID": "8u89u98hkjjkka",
+        "createOn": 1498433401299,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et animi inventore, laborum quia aliquam. Laborum, minima quasi recusandae autem ipsum fugiat itaque excepturi sint vitae, cupiditate dolor consequuntur porro dolorem",
+        "full_post": " <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>               <p>So I am dedicating 2014 to her. <i>La femme fatale</i>. Why? Well, simply because her no bullshit modus operandi                 could bring about radical change. Hers is an archetype that is simultaneously disobedient, powerful, serious,                 troublesome, wise, playful, tough, kind, seductive and sensual saying <q>Fuck you</q> to anyone who attempts                 to diminish her sense of self. Qualities which could be useful for African women, for women everywhere, don’t                 you think?</p>               <p>Firstly, the African Fatale lives – and has for very long lived – in a world, where much like the continent                 from where she comes, her existence has been equally mystified and condemned. As the feminine proprietor                 of the torch-shaped treasure grove which is Africa, she has been exploited, abused, adored and praised in                 tandem with it. In ancient times before christian mythology was misused to justify slavery, declaring black                 the colour of evil and of the devil, dark skin was a symbol of beauty, of earth and of divinity. The African                 continent was in those days also seen as a place of esteem: of knowledge and wealth. This was long before                 fellas like Sigmund Freud nailed Africa and women into the same casket with declarations such as, uhn, <q>the sexual life of adult women is a q{dark continent} for psychology.</q>                The modern African femme fatale knows that her early worshippers had good taste. To her, “female freedom                 always means sexual freedom” (as Toni Morrison said), and she is indefatigably proud of her heritage.</p>               <p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "hasImage": true,
+        "media": {
+          "type": "image",
+          "url": "/images/tech_jobs.jpg"
+        },
+        "published": true,
+        "title": "Gender inequality at the Executive levels of the I.T Industry"
+      },
+      "-KnW_mxBr0VPo6ZcU1NT": {
+        "categoryID": "8u89u98hkjjkkz",
+        "createdOn": 1498433401299,
+        "date_edited": 1498433401299,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et animi inventore, laborum quia aliquam. Laborum, minima quasi recusandae autem ipsum fugiat itaque excepturi sint vitae, cupiditate dolor consequuntur porro dolorem",
+        "body": "<p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>",
+        "published": false,
+        "title": "Bisexuality and it’s legal verdict in the Sub-Saharan Africa",
+        "slug_name": "",
+        "created_by": "6I9bX9BbcqYd4vDni4gSMdp3DnI3"
+      }
+    },
+    "stats": {
+      "nop": 10,
+      "nopp": 9
+    }
+  }
+}
+
+
+// time should be added like so: firebase.database.ServerValue.TIMESTAMP
+// slug_name: title.replace(/\s/g, '-')
+
+createPost("Bisexuality and it’s legal verdict in the Sub-Saharan Africa", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et animi inventore, laborum quia aliquam. Laborum, minima quasi recusandae autem ipsum fugiat itaque excepturi sint vitae, cupiditate dolor consequuntur porro dolorem", "<p>If you are interested in pan-Africanism then chance are that you have visited the pages of the African Holocaust,                 &ldquo;a non-profit civil society dedicated to the progressive study of African history and culture.&rdquo;                 At least I have found useful information on the website while researching topics that have.</p>               <p>As the year comes to an end, I thought that I would like my last post of the year to be about something exciting,                 a feminine energy we could do well channeling more of in 2014. Scrolling through old posts and comments,                 I recognised an energy brewing, one not yet defined but one which can put an end to the erotic famine that                 has caused women a sense of powerlessness – namely the femme fatale.</p>", false, "6I9bX9BbcqYd4vDni4gSMdp3DnI3", "8u89u98hkjjkkz")
+
+
+
+createPost(title, description, body, published, createdBy, categoryID)
+
+createUser(displayName, email, password, disabled, group)

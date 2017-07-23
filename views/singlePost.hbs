@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="grey lighten-5">
+  <header>
+    {{> nav}}
+  </header>
+  <main class="row post-content">
+    <div class="container">
+      <section class="row no-margin-bottom">
+        <br class="col s12">
+        <br class="col s12">
+        <div class="single-post col s12 m12 l9">
+          <article class="card">
+            {{#if post.media}}
+            <div class="card-image">
+              <img src="{{post.media.url}}">
+            </div>
+            {{/if}}
+            <div class="blog-post-meta">
+              <span class="label {{#if post.category}}{{post.category}}{{else}}general{{/if}}_label">{{#if post.category}}{{post.category}}{{else}}general{{/if}}</span>
+              <span class="post-date">{{getPostTime post.createdOn}}</span>
+            </div>
+            <div class="card-content">
+              <a href="#!">
+                <h3 class="card-title">{{post.title}}</h3>
+              </a>
+              {{{post.body}}}
+              <!--<div class="card-action">
+                            <a href="#" class="btn-flat">Read more</a>
+                            <a href="#!" class="right"><i class="icon ion-android-share-alt"></i></a>
+                        </div>-->
+          </article>
+          <ul class="share-area inline-list center">
+            <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coloured.com.ng/p{{post.url}}"
+                class="btn-floating btn-large waves-effect waves-light indigo"><i class="icon ion-social-facebook waves-effect waves-light"></i></a></li>
+            <li><a target="_blank" href="http://twitter.com/share?text={{post.title}}&url=https://coloured.com.ng/p{{url}}&hashtags={{post.category}},colouredNG"
+                class="btn-floating btn-large waves-effect waves-light blue"><i class="icon ion-social-twitter waves-effect waves-light"></i></a></li>
+            {{!--<li><a target="_blank" href="https://plus.google.com/share?url=https://coloured.com.ng/p/{{post.title}}" class="btn-floating btn-large waves-effect waves-light red"><i class="icon ion-social-googleplus waves-effect waves-light"></i></a></li>--}}
+            {{!--
+            <li><a href="#!" class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="icon ion-android-mail waves-effect waves-light"></i></a></li>--}}
+
+            {{!-- <li class="hide-on-large-only"><a href="whatsapp://send?text={{post.title}} https://coloured.com.ng/p/{{post.title}}" data-action="share/whatsapp/share"
+                class="btn-floating btn-large waves-effect waves-light green"><i class="icon ion-social-whatsapp waves-effect waves-light"></i></a></li> --}}
+          </ul>
+          </div>
+          {{> aside}}
+      </section>
+      </div>
+  </main>
+
+  {{> footer}}
+</body>
+
+</html>

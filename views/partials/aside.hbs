@@ -1,0 +1,75 @@
+<aside class="col s12 m12 l3 row no-margin-bottom">
+  <div class="col s12 m6 l12">
+    <h1 class="section-heading">Author</h1>
+    <article class="card about-me">
+      <div class="card-content">
+        <p>{{metadata.author.about}}</p>
+      </div>
+    </article>
+  </div>
+  <div class="col s12 m6 l12">
+    <h1 class="section-heading">Categories</h1>
+    <section class="card categories">
+      <div class="card-content" style="padding: 10px;">
+        <ul>
+          {{#each categories}}
+          <li>
+            <a href="/category/{{name}}">
+              <span class="label {{name}}_label">{{name}}</span>
+              {{!-- <span class="right no_of_posts no_of_posts_in_category-{{@key}} label">{{this}}</span> --}}
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+  </div>
+  {{!--<div class="col s12 m6 l12 right">
+    <h1 class="section-heading">News letter</h1>
+    <section class="card-panel newsletter no-margin-bottom">
+      <p class="no-margin-bottom">Never miss a vital update from this blog</p>
+      <form id="newsletter_form">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="name" type="text" class="validate" required>
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" required>
+            <label for="email">Email</label>
+          </div>
+          <button class="col s12 btn blue-grey">Subscribe</button>
+        </div>
+      </form>
+    </section>
+  </div>--}}
+  <div class="col s12 m6 l12">
+    <h1 class="section-heading">Elsewhere</h1>
+    <section class="card social">
+      <div class="card-content" style="padding: 10px 20px;">
+        <ul>
+          <li>
+            <a target="_blank" href="https://fb.com/{{metadata.social.facebook}}" class="blue-grey-text text-darken-3">
+                <i class="icon ion-social-facebook x1"></i> &nbsp;facebook
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://twitter.com/{{metadata.social.twitter}}" class="blue-grey-text text-darken-3">
+                <i class="icon ion-social-twitter x1"></i> &nbsp;twitter
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://instagram.com/{{metadata.social.instagram}}" class="blue-grey-text text-darken-3">
+                <i class="icon ion-social-instagram x1"></i> &nbsp;Instagram
+            </a>
+          </li>
+          {{!--<li>
+            <a href="#!" class="blue-grey-text text-darken-3">
+                                            <i class="icon ion-social-googleplus x1"></i> &nbsp;Google Plus
+                                        </a>
+          </li>--}}
+        </ul>
+      </div>
+    </section>
+  </div>
+</aside>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="grey lighten-5">
+	<header>
+		{{> nav}} {{#if page.home}}{{> featured_posts}}{{/if}}
+	</header>
+	<main class="row">
+		<div class="col s12 m12 l9">
+			<h1 class="section-heading" style="text-transform: uppercase;">{{postsGroupTitle}}</h1>
+			{{#if empty}}
+			<br><br>
+			<h4>No post here yet. </h4>
+			<p class="flow-text">Check back later</p>
+			{{else}}
+			<section class="blog-posts">
+				{{!-- {{#each posts}} {{#if published}} --}}
+				{{#each posts}}
+				{{> article}}
+				{{/each}}
+			</section>
+			{{/if}}
+		</div>
+		{{> aside}}
+	</main>
+	{{> footer}}
+</body>
+
+</html>

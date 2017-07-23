@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> admin_head}}
+
+<body>
+
+  {{> admin_nav}}
+  <main>
+    <a href="/controls/admin/createPost" class="newPostBtn btn indigo waves-effect waves-light">New Post</a>
+    <div class="fixed-action-btn">
+      <a href="/controls/admin/createPost" class="btn-floating btn-large indigo">
+        <i class="large icon ion-plus"></i>
+      </a>
+    </div>
+
+    <div class="container">
+      <br>
+      <div class="topInfoHeading">
+        <h4>Featured Posts</h4>
+        <p class="right"></p>
+      </div>
+      <table class="bordered highlight">
+        <thead>
+          <tr style="background: rgb(236, 239, 241);">
+            <th> &nbsp; TITLE</th>
+            <th>STATUS</th>
+            <th>CREATED ON</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each posts}} {{#if title}} {{#if published}}
+          {{> single_post_cell}}
+          {{!-- <tr id="tr{{@key}}">
+            <td id="{{@key}}">
+              <p class="postTitle_viewTable"><a href="/posts/{{title}}" target="_blank">{{title}}</a></p>
+              <div class="hide">
+                <div class="post-description-viewTable">{{description}}</div>
+                <span class="post-category-viewTable">{{category}}</span>
+                <div class="post-full-viewTable">{{full_post}}</div>
+                {{#if hasImage}}
+                  <span class="image-address">{{media.url}}</span>
+                {{/if}}
+              </div>
+              <p class="actionsOnPost_viewTable">
+                <a href="/controls/posts/edit/{{@key}}" class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</a>
+                <span class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">DELETE</span>
+                <a href="/posts/{{title}}" target="_blank" class="viewAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
+              </p>
+            </td>
+            <td>Published</td>
+            <td class="creationTime">{{getPostTime createOn}}</td>
+          </tr> --}}
+          {{else}}
+          <tr class="draft" id="tr{{@key}}">
+            <td id="{{@key}}">
+              <p class="postTitle_viewTable"><a href="/posts/{{title}}" target="_blank">{{title}}</a></p>
+              <p class="actionsOnPost_viewTable">
+                <span class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</span>
+                <span class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">DELETE</span>
+                <a href="/posts/{{title}}" target="_blank" class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
+              </p>
+            </td>
+            <td>Draft</td>
+            <td>{{getPostTime createOn}}</td>
+          </tr>
+          {{/if}} {{/if}} {{/each}}
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!--<textarea class="hide">
+
+  </textarea>-->
+
+  {{> admin_popups}}
+  {{> admin_footer}}
+</body>
+
+</html>

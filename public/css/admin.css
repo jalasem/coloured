@@ -1,0 +1,517 @@
+/*
+    Author: Ajala AbdulSamii Olalekan
+    Email: kgasta@gmail.com
+    Github: github.com/jalasem
+    Note: I have written some custom css here to help you through your design
+*/
+
+nav>.container {
+	width: 95%;
+}
+
+
+/*font size adjustments
+    in your html you can use them for icons and text
+    e.g <i class="icon ion-social-facebook x15"></i> to adjut the font-size of the icon to 1.5rem
+*/
+
+.x1 {
+	font-size: 1rem;
+}
+
+.x15 {
+	font-size: 1.5rem;
+}
+
+.x2 {
+	font-size: 2rem;
+}
+
+.x25 {
+	font-size: 2.5rem;
+}
+
+.x3 {
+	font-size: 3rem;
+}
+
+.x35 {
+	font-size: 3.5rem;
+}
+
+.x4 {
+	font-size: 4rem;
+}
+
+.x45 {
+	font-size: 4.5rem;
+}
+
+.x5 {
+	font-size: 5rem;
+}
+
+.x55 {
+	font-size: 5.5rem;
+}
+
+ul.social i.icon {
+	margin-right: 1rem;
+}
+
+#login-container>div.card {
+	max-width: 25rem !important;
+	margin: auto;
+	padding-bottom: 1rem;
+	padding: 0 2rem 1rem;
+}
+
+#auth {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: silver;
+	background-image: radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 0 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 50% 100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent), radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent), radial-gradient(circle at 0 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+	background-size: 100px 50px;
+	z-index: 10000;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow-y: auto;
+}
+
+nav.nav-extended a.brand-logo img,
+footer.page-footer a.brand-logo img {
+	max-width: 6rem;
+}
+
+footer ul.social li {
+	display: inline;
+}
+
+button.round-btn {
+	border-radius: 2rem;
+}
+
+#login-container .btn-large {
+	height: 50px;
+	line-height: 40px;
+}
+
+nav.nav-extended .tabs.tabs-transparent .indicator {
+	background-color: #263238;
+}
+
+nav a.brand-logo {
+	padding: 0.5rem 1.5rem;
+	max-width: 7rem;
+}
+
+nav ul li i.icon.ion-ios-arrow-down.right {
+	font-size: 1.3rem;
+	margin-left: 0.5rem;
+	line-height: 4.4rem;
+}
+
+nav a,
+nav a.brand-logo,
+nav li.tab a {
+	color: black !important;
+}
+
+nav .dropdown-content li>a>i {
+	margin-right: 5px;
+	margin-top: -3px;
+}
+
+.tabs.tabs-transparent {
+	max-width: 80rem;
+}
+
+nav ul li.active {
+	background-color: rgba(255, 255, 255, 0.82);
+	border-bottom: 2px solid #263238;
+	font-weight: 400;
+}
+
+ul#nav-mobile {
+	margin-right: 2%;
+}
+
+#top_spacer {
+	height: 3.2rem;
+}
+
+aside {
+	position: fixed;
+	height: calc(100vh - 60px);
+	top: 4rem;
+	left: 0;
+	padding: 1rem 1rem 2rem 0.6rem;
+	width: 13rem;
+	transition: all ease-in-out .3s;
+}
+
+aside.collapsed {
+	width: 1rem;
+	padding-right: 1rem;
+	min-width: 5.5rem;
+}
+
+aside.collapsed .collapsible {
+	max-width: 4rem;
+}
+
+aside .viewBlog {
+	font-family: Roboto;
+	font-weight: 500;
+	padding-left: 6px;
+}
+
+aside .collapsible-body {
+	padding: 0.5rem 0rem;
+}
+
+aside .collapsible-header i {
+	margin-right: 0.5rem;
+}
+
+aside li a.active {
+	border-right: 2px solid;
+	border-left: 2px solid;
+}
+
+#menuToggler {
+	position: absolute;
+	right: -3.5rem;
+	top: 0.35rem;
+	background: #eceff1;
+	padding: 0px 1.1rem;
+	border: 1px solid rgba(0, 0, 0, 0.23);
+}
+
+aside .collapsible-body li>a {
+	padding: 0.3rem 0rem;
+	padding-left: 1.3rem;
+	display: block;
+}
+
+aside .collapsible-body li>a i.icon {
+	font-size: 1.5rem;
+}
+
+aside .canGo {
+	transition: all ease-out .3s;
+}
+
+aside.collapsed .canGo {
+	display: none;
+}
+
+aside.collapsed .viewBlog i.icon {
+	margin-left: 0.8rem;
+}
+
+main {
+	min-height: 82.5vh;
+	width: calc(100% - 0rem);
+	padding: 1rem 1rem 1rem 14rem;
+	transition: all ease-in-out .3s;
+}
+
+main.expanded {
+	padding: 1rem 1rem 1rem 5.5rem;
+}
+
+.newPostBtn {
+	margin-left: 4rem;
+	margin-top: -0.5rem;
+}
+
+.topInfoHeading+table.bordered {
+	box-shadow: 0px 1px 1px #9E9E9E;
+}
+
+.topInfoHeading+table.bordered td:first-child,
+.topInfoHeading+table.bordered th {
+	padding: 1rem;
+}
+
+.topInfoHeading+table.bordered td p.postTitle_viewTable {
+	line-height: 100%;
+	margin: 0rem 1rem 0rem 0;
+}
+
+.topInfoHeading+table.bordered td p.postTitle_viewTable a {
+	color: black;
+}
+
+.topInfoHeading+table.bordered td p.actionsOnPost_viewTable {
+	display: none;
+	transition: all ease-in-out .3s;
+}
+
+.topInfoHeading+table.bordered td:hover p.actionsOnPost_viewTable {
+	display: inline-block;
+}
+
+.topInfoHeading+table.bordered td .actionsOnPost_viewTable .btn-flat {
+	padding: 0 1rem;
+}
+
+.topInfoHeading+table.bordered tr.draft,
+.topInfoHeading+table.bordered tr.draft p.postTitle_viewTable a {
+	color: #009688;
+}
+
+@media only screen and (min-width: 601px) {
+	.container {
+		width: 95%;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	nav .brand-logo.left {
+		left: 1rem;
+		padding-top: 8px;
+	}
+}
+
+
+/*popup*/
+
+.popup .popup-overlay {
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.75);
+	overflow-y: auto;
+	top: 0;
+	right: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.popup .popup-header {
+	padding: 0.5rem 1.5rem;
+	background: #F57C00;
+	color: white;
+	font-size: 1.9rem;
+}
+
+.popup .popup-content {
+	padding: 0rem 0rem 1rem;
+	margin-bottom: 0;
+}
+
+.popup .card-panel,
+.popup .card {
+	border: 1px solid rgba(158, 158, 158, 0.75);
+}
+
+.popup .card-panel:hover,
+.popup .card:hover {
+	border: 0px solid;
+}
+
+.popup .popup-body {
+	position: fixed;
+	top: 30px;
+	right: 0;
+	left: 0;
+	z-index: 1100;
+}
+
+.popup-body .close-area {
+	height: calc(90vh - 100px);
+	width: 100%;
+	background: rgba(128, 128, 128, 0);
+	position: absolute;
+}
+
+.popup-header .close-btn {
+	position: absolute;
+	top: 0rem;
+	right: 0rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+.popup .card-panel.hoverable {
+	cursor: pointer;
+	min-height: 20rem;
+}
+
+.popup .card-panel p,
+.popup .card p {
+	font-size: 1.2rem;
+}
+
+.popup .card.content-card {
+	height: 91vh;
+	overflow-y: auto;
+	width: 97%;
+	margin: auto;
+	padding-bottom: 2rem;
+}
+
+.popup .card .blog-post-meta {
+	color: rgb(153, 153, 153);
+	display: block;
+	padding: 16px 22px;
+	border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.popup .close-area+.container>.card {
+	max-width: 50rem;
+	margin: auto;
+}
+
+#edit_postPop .popup-content {
+	padding: 2rem 3rem;
+	height: 80vh;
+	overflow-y: auto;
+}
+
+
+/*popup*/
+
+.label {
+	text-align: left;
+	background-color: #FFF59D;
+	font-size: 12px;
+	font-weight: 400;
+	padding: 4px 12px;
+	color: black;
+	border-radius: 16px;
+	transition: all 0.15s ease;
+}
+
+.label.feminists-rising_label,
+.label.feminists.rising_label {
+	background-color: #11F176;
+}
+
+.label.feminism_label {
+	background: lavenderblush;
+}
+
+.label.general_label {
+	background-color: #FFF176;
+}
+
+.label.africa_label {
+	background-color: #CFD8DC;
+}
+
+.label.law_label {
+	background-color: #FFAB91;
+}
+
+.label.no_of_posts {
+	background-color: #CFD8DC;
+}
+
+.label.culture_label {
+	background-color: #E1BEE7;
+}
+
+
+/*progress bar*/
+
+#progress-wrp {
+	border: 1px solid #607D8B;
+	padding: 1px;
+	position: relative;
+	height: 15px;
+	border-radius: 3px;
+	margin: 10px auto;
+	text-align: left;
+	background: #fff;
+	box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+#progress-wrp .progress-bar {
+	height: 100%;
+	border-radius: 3px;
+	background-color: #607D8B;
+	width: 0;
+	box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+}
+
+#progress-wrp .status {
+	top: -2px;
+	left: 50%;
+	position: absolute;
+	display: inline-block;
+	color: #000000;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+
+/*progress bar*/
+
+.newPCont {
+	padding: 1rem 2rem;
+	margin-top: 1rem;
+}
+
+tr.featured {
+	background: #00ACC1;
+	color: white !important;
+	transition: all ease-in-out .3s;
+}
+
+tr.featured a {
+	color: white !important;
+	transition: all ease-in-out .3s;
+}
+
+tr.featured:hover {
+	background: teal !important;
+}
+
+tr.featured:hover .actionsOnPost_viewTable .btn {
+	color: black !important;
+}
+
+.catsCont .card {
+	padding: 0.1rem 1rem 1rem;
+}
+
+.catsCont .card .remove,
+.catsCont .card .edit {
+	cursor: pointer;
+}
+
+.about-panel {
+	margin-top: 2rem;
+	padding-top: 0rem;
+}
+
+.about-panel h1 {
+	font-size: 2.5rem;
+}
+
+.about-panel h2 {
+	font-size: 2rem;
+}
+
+.about-panel h3, h4 {
+	font-size: 1.8rem;
+}
+
+.btn-large i {
+	font-size: 1.25rem;
+}
