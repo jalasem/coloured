@@ -33,13 +33,31 @@
         </thead>
 
         <tbody>
-          {{#if empty}}
-            <p class="flow-text">No Post in draft</p>
-          {{else}}
+          {{!-- {{#if empty}} --}}
+            {{!-- <p class="flow-text">No Post in draft</p> --}}
             {{#each posts}}
-              {{> single_post_cell}}
+              <tr class="draft" id="tr{{slug}}">
+                <td id="{{slug}}">
+                  <p class="postTitle_viewTable"><a href="/posts/{{title}}" target="_blank">{{title}}</a></p>
+                  <div class="hide">
+                    <div class="post-description-viewTable">{{description}}</div>
+                    <span class="post-category-viewTable">{{category}}</span>
+                    <div class="post-full-viewTable">{{full_post}}</div>
+                    {{#if hasImage}}
+                    <span class="image-address">{{media.url}}</span> {{/if}}
+                  </div>
+                  <p class="actionsOnPost_viewTable">
+                    <a href="/controls/posts/edit/{{slug}}" class="editAction_viewTable waves-effect btn-flat blue-grey lighten-4">Edit</a>
+                    <span class="deleteAction_viewTable waves-effect btn-flat blue-grey lighten-4">DELETE</span>
+                    <a href="/p{{url}}" target="_blank" class="viewAction_viewTable waves-effect btn-flat blue-grey lighten-4">VIEW</a>
+                  </p>
+                </td>
+                <td>{{#if published}}Published{{else}}Draft{{/if}}</td>
+                <td class="creationTime">{{getPostTime createdOn}}</td>
+                <td class="creationTime">{{created_on}}</td>
+              </tr>
             {{/each}}
-          {{/if}}
+          {{!-- {{/if}} --}}
         </tbody>
       </table>
     </div>

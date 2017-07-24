@@ -264,16 +264,17 @@ router.get('/category/:cat', (req, res) => {
   }
   Promise.all([
     GetPublishedPostsByCategory(cat),
-    GetCategories()
+    GetCategories(), GetMetadata()
   ]).then(data => {
     let posts = data[0];
     let categories = data[1];
+    let metadata = data[2][0];
     let empty = true;
     if(posts.length > 0)
       empty = false;
     res.render('index', {
       posts: posts.reverse(),
-      categories,
+      categories, metadata,
       thisPage: {
         title: cat.toUpperCase(),
         category_page: true
@@ -756,9 +757,8 @@ router.get('/controls/posts/drafts', (req, res) => {
       let empty = true;
       if(posts.length > 0)
         empty = false;
-      return res.render("admin_published_posts", {
+      return res.render("admin_draft_posts", {
         adminfname, adminlname, posts,
-        // nop, nopp, noup,
         thisPage: {
           title: "Draft Posts",
           draft: true
