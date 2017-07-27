@@ -174,6 +174,7 @@ const GetNoOfPublishedPostsInCategory = cat => {
     return count;
   });
 };
+
 const GetMetadata = () => {
   return Metadata
     .find()
@@ -452,6 +453,13 @@ router.put('/api/changePass', (req, res) => {
       res.send({message: "error", code: 'NOT_OK'});
     }
   })
+});
+
+router.put('/api/changeAdminDetails', (req, res) => {
+  let username = req.session.user.username;
+  Admin.findOne({username: username}, (err, details) => {
+    //TODO: set changes variable and save
+  })
 })
 
 router.post('/api/upload/image', fileParser, (req, res) => {
@@ -624,7 +632,7 @@ router.put('/api/editCategory', (req, res) => {
 
   Category.findOneAndUpdate({name: oldName}, {name: name}, (errr) => {
     if(!errr) {
-      Post.update({category: oldName}, {category: name}, err => {
+      Post.updateMany({category: oldName}, {category: name}, err => {
         if(!err){
             res.send({message: "success", code: 'OK'});
           } else {
@@ -642,7 +650,7 @@ router.delete('/api/deleteCategory', (req, res) => {
   let name = req.body.catname;
   Category.findOneAndRemove({name: name}, (errr) => {
     if(!errr){
-      Post.update({category: name}, {category: 'general'}, err => {
+      Post.updateMany({category: name}, {category: 'general'}, err => {
         if(!err){
           res.send({message: "success", code: 'OK'});
         } else {
