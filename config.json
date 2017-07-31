@@ -1,6 +1,10 @@
 {
   "db_user": "flower",
   "db_pass": "flower",
+  "smtp_host": "smtp.zoho.com",
+  "smpt_port": 465,
+  "smtp_user": "ohotu@coloured.com.ng",
+  "stmp_pass": "Flower10@@",
   "monthNames": ["january", "february", "march", "april", "may","june", "july", "august", "september", "october", "november","december"
   ]
 }

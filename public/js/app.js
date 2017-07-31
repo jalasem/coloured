@@ -433,9 +433,3 @@ function editCat() {
   });
   return false;
 }
-
-
-function changepass(){
-  console.log("attempt tp change password");
-  return false;
-}

@@ -8,8 +8,10 @@ const express = require("express"),
   path = require('path'),
   config = require('./config.json'),
   fs = require('fs'),
+  nodemailer = require('nodemailer'),
   cloudinary = require('cloudinary'),
   fileParser = require('connect-multiparty')(),
+  validator = require('validator'),
   mime = require("mime"),
   bodyParser = require('body-parser'),
   admin = require('firebase-admin'),
@@ -213,6 +215,32 @@ app.use(bodyParser.urlencoded({extended: true}));
 process.env.PWD = process.cwd();
 app.use(express.static(path.join(process.env.PWD, 'public')));
 
+const mailHandler = nodemailer.createTransport({
+    host: config.smtp_host,
+    secure: true, // use SSL
+    port: config.smpt_port, // port for secure SMTP
+    auth: {
+        user: 'ohotu@coloured.com.ng',
+        pass: 'Flower10@@'
+    }
+});
+
+var mailOptions = {
+    from: '"Ohotu Ogbeche" <ohotu@coloured.com.ng>',
+    to: 'jalasem@icloud.com, ajalaabdulsamii@gmail.com',
+    subject: 'Hello ',
+    text: 'Hello world ',
+    html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js'
+};
+
+mailHandler.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(JSON.stringify(error, undefined,2));
+    }
+
+    console.log('Message sent: ' + info.response);
+});
+
 hbs.registerPartials(path.join(process.env.PWD, 'views/partials'));
 app.set('views', path.join(process.env.PWD, 'views'));
 app.set('view engine', 'hbs');
@@ -329,7 +357,7 @@ router.post('/api/login', (req, res) => {
     .loginCred
     .toLowerCase();
   let password = req.body.password
-  if (credential.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
+  if (!validator.isEmail(credential)) {
     Admin.findOne({
       username: credential
     }, (err, data) => {
@@ -455,12 +483,19 @@ router.put('/api/changePass', (req, res) => {
   })
 });
 
-router.put('/api/changeAdminDetails', (req, res) => {
+router.put('/api/changeDetails', (req, res) => {
   let username = req.session.user.username;
-  Admin.findOne({username: username}, (err, details) => {
-    //TODO: set changes variable and save
-  })
-})
+  let updates = _.pick(req.body, ['firstname', 'lastname', 'email']);
+  Admin.findOneAndUpdate({username: username}, updates, (err, data) => {
+    if(!err) {
+      console.log(JSON.stringify(data, undefined, 2));
+      res.send({message: 'update successful', code: 'OK'})
+    } else {
+      console.log(JSON.stringify(err, undefined, 2));
+      res.send({message: 'update failed', code: 'NOT_OK'});
+    }
+  });
+});
 
 router.post('/api/upload/image', fileParser, (req, res) => {
   var imageFile = req.files.file;
@@ -473,7 +508,7 @@ router.post('/api/upload/image', fileParser, (req, res) => {
         res.send({message: "Error uploading to cloudinary", code: 'NOT_OK'});
         console.log('Error uploading to cloudinary: ', result);
       }
-    })
+    });
 });
 
 router.post('/api/createPost', (req, res) => {
@@ -932,12 +967,7 @@ router.get('/controls/profile', (req, res) => {
 
 app.use('/', router);
 
-const port = process.env.PORT || 5050;
-app.listen(port, () => {
-
-  console.log(`server running on port ${port}`);
+const port = app.set('PORT', process.env.PORT || 8080);
+app.listen(app.get('PORT'), () => {
+  console.log(`server running on port ${app.get('PORT')}`);
 });
-
-// Category.findOne({ 'name': 'law' }).select('_id').exec((err, data) => {
-// if(err)         console.log(JSON.stringify(err, undefined, 2));
-// console.log(data._id);   });

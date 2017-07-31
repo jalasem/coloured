@@ -9,7 +9,36 @@
   <main>
     <div class="container">
       <br><br>
-      <h4>Profile Settings</h4>
+      <h4> &nbsp; Profile Settings</h4>
+      <form id="changeAdminDetails" class="row">
+        <div class="container">
+          <p class="flow-text"> &nbsp; Profile details</p>
+          <div class="input-field col s12 m6 l2">
+            <i class="icon"></i>
+            <input type="email" id="username_profile" disabled value="jalasem">
+            <label for="username_profile">Username</label>
+          </div>
+          <div class="input-field col s12 m6 l5">
+            <i class="icon prefix ion-ios-person"></i>
+            <input type="text" id="firstname_profile" required>
+            <label for="firstname_profile">Firstname</label>
+          </div>
+          <div class="input-field col s12 m6 l5">
+            <i class="icon prefix ion-ios-person"></i>
+            <input type="text" id="lastname_profile" required>
+            <label for="lastname_profile">Lastname</label>
+          </div>
+          <div class="input-field col s12 m6 l4">
+            <i class="icon prefix ion-android-mail"></i>
+            <input type="email" id="email_profile" required>
+            <label for="email_profile">email</label>
+          </div>
+          <div class="input field col s12">
+            <button class="btn indigo waves-effect waves-light">Update</button>
+          </div>
+        </div>
+      </form>
+      <br class="divider">
       <form id="changePass" class="row">
         <div class="container">
           <p class="flow-text"> &nbsp; Change Password</p>
@@ -25,7 +54,7 @@
             <p id="error-text" class="red-text" style="margin-top: -15px;"></p>
           </div>
           <div class="input field col s12">
-            <button class="btn indigo disabled waves-effect waves-light" id="changePassBtn">Save</button>
+            <button class="btn indigo disabled waves-effect waves-light" id="changePassBtn">Save changes</button>
           </div>
         </div>
       </form>
@@ -50,7 +79,7 @@
         }
       });
     });
-    $('#changePass').submit(function(e){
+    $('#changePass').submit(function (e) {
       e.preventDefault();
 
       $.ajax({
@@ -59,20 +88,45 @@
         data: {
           newpass: $('#newPass2').val()
         },
-        success: function(data){
-          if(data.code == 'OK'){
+        success: function (data) {
+          if (data.code == 'OK') {
             Materialize.toast("Password changed successfully!", 4000, 'rounded');
           } else {
             Materialize.toast(data.message, 3000);
           }
         },
-        error: function(err){
+        error: function (err) {
           console.log(err);
           Materialize.toast("error", 3000);
         }
       })
 
       return false;
+    });
+    $('#changeAdminDetails').submit(function (e) {
+      e.preventDefault();
+
+      $.ajax({
+        type: "PUT",
+        url: '/api/changeDetails',
+        data: {
+          firstname: $('#firstname_profile').val(),
+          lastname: $('#lastname_profile').val(),
+          email: $('#email_profile').val();
+        },
+        success: function (data) {
+          console.log(JSON.stringify(data, undefined, 2));
+          if (data.code === 'OK') {
+            Materialize.toast("update successfully", 3000, 'rounded');
+          } else {
+            Materialize.toast('sorry, unable to update');
+          }
+        },
+        error: function (er) {
+          console.log(JSON.stringify(er, undefined, 2));
+          Materialize.toast('sorry, unable to update');
+        }
+      })
     })
   </script>
 </body>

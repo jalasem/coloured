@@ -113,80 +113,59 @@
       </li>-->
     </ul>
   </aside>
-  <main class="row">
-    <a href="/controls/admin/" class="newPostBtn btn waves-effect waves-light"><i class="icon ion-arrow-left-c left"> </i> Back</a>
-
-    <div class="container newPCont blue-grey lighten-5 blue-grey-text text-darken-4">
-      <h5>Add New Post</h5>
-      <div class="row">
-        <form id="NewPostForm" class="col s12 m8" onsubmit="writeNewPost(); return false;">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="newPostTitle" type="text" class="validate" data-error="Your new post requires a title" data-success="good" required>
-              <label for="newPostTitle">Post Title *</label>
-            </div>
-            <div class="input-field col s12">
-              <textarea id="newPosDesc" class="materialize-textarea"></textarea>
-              <label for="newPosDesc">Post Description <span class="grey-text text-lighten-3">(Optional)</span></label>
-            </div>
-            <div class="input-field col s12">
-              <select id="newPostCat">
-                <option value="general" disabled selected>Select Category</option>
-                <option value="africa">Africa</option>
-                <option value="culture">Culture</option>
-                <option value="feminism">Feminism</option>
-                <option value="feminists rising">Feminists Rising</option>
-                <option value="law">Law</option>
-              </select>
-            </div>
+  <main>
+    <div class="container">
+      <br><br>
+      <h4> &nbsp; Profile Settings</h4>
+      <form id="changeAdminDetails" class="row">
+        <div class="container">
+          <p class="flow-text"> &nbsp; Profile details</p>
+          <div class="input-field col s12 m6 l2">
+            <i class="icon"></i>
+            <input type="email" id="username_profile" disabled value="jalasem">
+            <label for="username_profile">Username</label>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="newPostFull" class="materialize-textarea"></textarea>
-              <label for="newPostFull" style="margin-top: -3rem;font-size: 1.5rem;color: #455A64;">Full Post</label>
-            </div>
-            <button style="margin-top: 1rem;margin-left: 0.7rem;" class="btn-large indigo" type="submit">
-              <i class="newPostSpinner hide fa fa-spinner fa-pulse fa-3x fa-fw"> </i>
-              Post
-            </button>
+          <div class="input-field col s12 m6 l5">
+            <i class="icon prefix ion-ios-person"></i>
+            <input type="text" id="firstname_profile" required>
+            <label for="firstname_profile">Firstname</label>
           </div>
-        </form>
-        <div class="col s12 m4">
-          <ul class="collapsible" data-collapsible="expandable">
-            <li>
-              <div class="collapsible-header active"><i class="icon ion-earth"> </i> New post Status</div>
-              <div class="collapsible-body">
-                <select id="newPostStatus">
-                  <option value="public">Public</option>
-                  <option value="Draft">Draft</option>
-                </select>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header active"><i class="icon ion-image"> </i> Post Image (Optional)</div>
-              <div class="collapsible-body">
-                <img id="placeholdFeaturedImage" src="" alt="" class="img-responsive blue-grey" style="min-height:150px; width: 100%">
-                <div class="file-field input-field">
-                  <div class="btn">
-                    <span>File</span>
-                    <input type="file" id="ingredient_file">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                  </div>
-                  <div id="progress-wrp" class="hide">
-                    <div class="progress-bar"></div>
-                    <div class="status">0%</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <div class="input-field col s12 m6 l5">
+            <i class="icon prefix ion-ios-person"></i>
+            <input type="text" id="lastname_profile" required>
+            <label for="lastname_profile">Lastname</label>
+          </div>
+          <div class="input-field col s12 m6 l4">
+            <i class="icon prefix ion-android-mail"></i>
+            <input type="email" id="email_profile" required>
+            <label for="email_profile">email</label>
+          </div>
+          <div class="input field col s12">
+            <button class="btn indigo waves-effect waves-light">Update</button>
+          </div>
         </div>
-      </div>
+      </form>
+      <br class="divider">
+      <form id="changePass" class="row">
+        <div class="container">
+          <p class="flow-text"> &nbsp; Change Password</p>
+          <div class="input-field col s12 m6">
+            <i class="icon prefix ion-locked"></i>
+            <input type="password" id="newPass1" required>
+            <label for="newPass1">New Password</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="icon prefix ion-lock-combination"></i>
+            <input type="password" id="newPass2" required>
+            <label for="newPass2">Confirm Password</label>
+            <p id="error-text" class="red-text" style="margin-top: -15px;"></p>
+          </div>
+          <div class="input field col s12">
+            <button class="btn indigo disabled waves-effect waves-light" id="changePassBtn">Save changes</button>
+          </div>
+        </div>
+      </form>
     </div>
-
-
   </main>
 
   <script async="" src="https://www.google-analytics.com/analytics.js"></script>
