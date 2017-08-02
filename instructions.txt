@@ -1,0 +1,11 @@
+here are the direction to run the code
+
+1. Install "node-v8.2.1-x64.msi" or the other if this doesnt Install
+2. Install "VSCodeSetup-ia32-1.14.2"
+3. To see the Code, open Vscode/ Visual Studio Code and drag the coloured.com.ng folder inside it.
+4. To run the code. Ensure you have good internet.
+  - in Vscode press 'ctrl + `', this should bring a terminal up within the code editor
+  - in it type this node index.js
+  - then go to your browser and open this address:
+    "localhost:8080"
+    you'll see the website open from there.
