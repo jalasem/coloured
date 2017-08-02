@@ -15,22 +15,22 @@
           <p class="flow-text"> &nbsp; Profile details</p>
           <div class="input-field col s12 m6 l2">
             <i class="icon"></i>
-            <input type="email" id="username_profile" disabled value="jalasem">
+            <input type="email" id="username_profile" disabled value="{{adminUsrname}}">
             <label for="username_profile">Username</label>
           </div>
           <div class="input-field col s12 m6 l5">
             <i class="icon prefix ion-ios-person"></i>
-            <input type="text" id="firstname_profile" required>
+            <input type="text" id="firstname_profile" value="{{adminfname}}" required>
             <label for="firstname_profile">Firstname</label>
           </div>
           <div class="input-field col s12 m6 l5">
             <i class="icon prefix ion-ios-person"></i>
-            <input type="text" id="lastname_profile" required>
+            <input type="text" id="lastname_profile" value="{{adminlname}}" required>
             <label for="lastname_profile">Lastname</label>
           </div>
           <div class="input-field col s12 m6 l4">
             <i class="icon prefix ion-android-mail"></i>
-            <input type="email" id="email_profile" required>
+            <input type="email" id="email_profile" value="{{adminEmail}}" required>
             <label for="email_profile">email</label>
           </div>
           <div class="input field col s12">
@@ -112,7 +112,7 @@
         data: {
           firstname: $('#firstname_profile').val(),
           lastname: $('#lastname_profile').val(),
-          email: $('#email_profile').val();
+          email: $('#email_profile').val()
         },
         success: function (data) {
           console.log(JSON.stringify(data, undefined, 2));

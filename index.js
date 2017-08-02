@@ -215,31 +215,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 process.env.PWD = process.cwd();
 app.use(express.static(path.join(process.env.PWD, 'public')));
 
-const mailHandler = nodemailer.createTransport({
-    host: config.smtp_host,
-    secure: true, // use SSL
-    port: config.smpt_port, // port for secure SMTP
-    auth: {
-        user: 'ohotu@coloured.com.ng',
-        pass: 'Flower10@@'
-    }
-});
-
-var mailOptions = {
-    from: '"Ohotu Ogbeche" <ohotu@coloured.com.ng>',
-    to: 'jalasem@icloud.com, ajalaabdulsamii@gmail.com',
-    subject: 'Hello ',
-    text: 'Hello world ',
-    html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js'
-};
-
-mailHandler.sendMail(mailOptions, function(error, info){
-    if(error){
-        return console.log(JSON.stringify(error, undefined,2));
-    }
-
-    console.log('Message sent: ' + info.response);
-});
 
 hbs.registerPartials(path.join(process.env.PWD, 'views/partials'));
 app.set('views', path.join(process.env.PWD, 'views'));
@@ -485,8 +460,12 @@ router.put('/api/changePass', (req, res) => {
 
 router.put('/api/changeDetails', (req, res) => {
   let username = req.session.user.username;
-  let updates = _.pick(req.body, ['firstname', 'lastname', 'email']);
-  Admin.findOneAndUpdate({username: username}, updates, (err, data) => {
+
+  let newfname = req.body.firstname;
+  let newlname = req.body.lastname;
+  let newEmail = req.body.email;
+
+  Admin.findOneAndUpdate({username: username}, {firstname: newfname, lastname: newlname, email: newEmail}, (err, data) => {
     if(!err) {
       console.log(JSON.stringify(data, undefined, 2));
       res.send({message: 'update successful', code: 'OK'})
@@ -939,30 +918,41 @@ router.get('/controls/posts/edit/:slug', (req, res) => {
 router.get('/controls/admin/')
 
 router.get('/controls/profile', (req, res) => {
-  Promise.all([GetMetadata(), GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts()]).then(result => {
-    let metadata = result[0]
-    let nop = result[1];
-    let nopp = result[2];
-    let noup = result[3];
+    Promise.all([GetMetadata(), GetNoOfPosts(), GetNoOfPublishedPosts(), GetNoOfUnpublishedPosts()]).then(result => {
+      let metadata = result[0]
+      let nop = result[1];
+      let nopp = result[2];
+      let noup = result[3];
 
-    let adminName = req.session.user.name;
-    let adminfname = adminName.split(" ")[0];
-    let adminlname = adminName.split(" ")[1];
+      let adminName = req.session.user.name;
+      let adminUsrID = req.session.user.id;
+      // let adminfname = adminName.split(" ")[0];
+      // let adminlname = adminName.split(" ")[1];
 
-    return res.render('profile', {
-      adminfname,
-      adminlname,
-      metadata,
-      nop,
-      nopp,
-      noup,
-      thisPage: {
-        title: `Profile - ${adminfname} ${adminlname}`,
-        Profile: true
-      }
+      Admin.findById(adminUsrID,'firstname lastname email username', (err,data) => {
+        let adminEmail = data.email;
+        let adminfname = data.firstname;
+        let adminlname = data.lastname;
+        let adminUsrname = data.username;
+        return res.render('profile', {
+          adminfname,
+          adminlname,
+          adminEmail,
+          adminUsrname,
+          metadata,
+          nop,
+          nopp,
+          noup,
+          thisPage: {
+            title: `Profile - ${adminfname} ${adminlname}`,
+            Profile: true
+          }
+        });
+      });
+
+
     })
   })
-})
 
 
 app.use('/', router);
