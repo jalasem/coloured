@@ -2,3 +2,4 @@ node_modules
 .DS_STORE
 trash.jal
 credentials/*.crt
+config.json
