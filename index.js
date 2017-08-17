@@ -468,7 +468,8 @@ router.put('/api/changeDetails', (req, res) => {
   Admin.findOneAndUpdate({username: username}, {firstname: newfname, lastname: newlname, email: newEmail}, (err, data) => {
     if(!err) {
       console.log(JSON.stringify(data, undefined, 2));
-      res.send({message: 'update successful', code: 'OK'})
+      res.send({message: 'update successful', code: 'OK'});
+       req.session.user.name = data.fullname;
     } else {
       console.log(JSON.stringify(err, undefined, 2));
       res.send({message: 'update failed', code: 'NOT_OK'});
